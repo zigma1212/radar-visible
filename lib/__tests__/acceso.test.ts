@@ -16,6 +16,10 @@ describe("acceso con usuario y clave", () => {
     expect(accesoPermitido("Basic %%%", "visible", "s3creta")).toBe(false);
     expect(accesoPermitido("Bearer x", "visible", "s3creta")).toBe(false);
   });
+  it("el usuario no distingue mayúsculas; la clave sí", () => {
+    expect(accesoPermitido(basic("Visible", "s3creta"), "visible", "s3creta")).toBe(true);
+    expect(accesoPermitido(basic("visible", "S3creta"), "visible", "s3creta")).toBe(false);
+  });
   it("la clave puede contener dos puntos", () => {
     expect(accesoPermitido(basic("visible", "a:b"), "visible", "a:b")).toBe(true);
   });

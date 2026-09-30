@@ -13,7 +13,8 @@ export function accesoPermitido(cabecera: string | null, usuario: string, clave:
   }
   const i = decodificado.indexOf(":");
   if (i < 0) return false;
-  return iguales(decodificado.slice(0, i), usuario) && iguales(decodificado.slice(i + 1), clave);
+  // El usuario no distingue mayúsculas ("Visible" = "visible"); la clave sí.
+  return iguales(decodificado.slice(0, i).trim().toLowerCase(), usuario.toLowerCase()) && iguales(decodificado.slice(i + 1), clave);
 }
 
 /** Comparación que no se corta en el primer carácter distinto. */
