@@ -1,7 +1,7 @@
 <!-- radar/README.md · Radar · Interés compuesto a la vista · todos los datos de la demo son inventados -->
 # Radar · Interés compuesto a la vista
 
-> **Demo en línea:** https://radar-visible.vercel.app (modo plantilla: sin clave de IA, para que cualquiera pueda probarla).
+> **Demo en línea:** https://radar-visible.vercel.app (protegida con usuario y clave, que van en la entrega; modo plantilla, sin clave de IA).
 >
 > **Para verlo en tu máquina en dos minutos:** `npm install && npm run dev` y abrir http://localhost:3000. Empieza por **/diagnostico** (el porqué) y sigue con el botón "Ver el radar funcionando". Detalle en [Arranque en 3 comandos](#arranque-en-3-comandos). Todos los datos son inventados.
 
@@ -88,6 +88,7 @@ Solo nombres; los valores nunca se guardan en el repositorio. La lista con comen
 | `IA_PROVEEDOR` | Proveedor de IA a usar (Anthropic u OpenAI). Sin credencial, se usan plantillas. |
 | `ANTHROPIC_MODEL`, `OPENAI_MODEL` | Modelo del proveedor elegido. La credencial del proveedor va en la variable estándar de su SDK (ver `radar/.env.example`). |
 | `SLACK_WEBHOOK_URL` | Webhook entrante para enviar el brief. Sin él, vista previa. |
+| `DEMO_USUARIO`, `DEMO_CLAVE` | Si ambas existen, la app pide usuario y clave (autenticación básica, `proxy.ts`). Vacías = acceso libre (uso local). |
 | `RADAR_DATA_DIR` | Carpeta del estado (notas, auditoría, facturas importadas). Por defecto `.data/`; en Vercel, `/tmp/radar-data` (se reinicia cuando la instancia se recicla). |
 | `NOTION_TOKEN`, `NOTION_DB_CLIENTES`, `NOTION_DB_CALENDARIO` | Previstas para el conector real de Notion. |
 | `SIIGO_USER`, `SIIGO_ACCESS_KEY` | Previstas para el conector real de Siigo. |
