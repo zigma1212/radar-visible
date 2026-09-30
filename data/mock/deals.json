@@ -1,0 +1,146 @@
+[
+  {
+    "cuenta_id": "c01",
+    "etapa": "Cliente activo",
+    "fecha_renovacion": "2027-01-05",
+    "valor_cop": 72000000
+  },
+  {
+    "cuenta_id": "c02",
+    "etapa": "Renovación en conversación",
+    "fecha_renovacion": "2026-11-12",
+    "valor_cop": 144000000
+  },
+  {
+    "cuenta_id": "c03",
+    "etapa": "Renovación en conversación",
+    "fecha_renovacion": "2026-10-25",
+    "valor_cop": 144000000
+  },
+  {
+    "cuenta_id": "c04",
+    "etapa": "Cliente activo",
+    "fecha_renovacion": "2027-05-10",
+    "valor_cop": 42000000
+  },
+  {
+    "cuenta_id": "c05",
+    "etapa": "Cliente activo",
+    "fecha_renovacion": "2027-05-18",
+    "valor_cop": 144000000
+  },
+  {
+    "cuenta_id": "c06",
+    "etapa": "Cliente activo",
+    "fecha_renovacion": "2027-05-09",
+    "valor_cop": 72000000
+  },
+  {
+    "cuenta_id": "c07",
+    "etapa": "Cliente activo",
+    "fecha_renovacion": "2027-01-30",
+    "valor_cop": 72000000
+  },
+  {
+    "cuenta_id": "c08",
+    "etapa": "Cliente activo",
+    "fecha_renovacion": "2027-04-10",
+    "valor_cop": 42000000
+  },
+  {
+    "cuenta_id": "c09",
+    "etapa": "Cliente activo",
+    "fecha_renovacion": "2027-05-16",
+    "valor_cop": 72000000
+  },
+  {
+    "cuenta_id": "c10",
+    "etapa": "Cliente activo",
+    "fecha_renovacion": "2027-07-06",
+    "valor_cop": 144000000
+  },
+  {
+    "cuenta_id": "c11",
+    "etapa": "Cliente activo",
+    "fecha_renovacion": "2027-05-18",
+    "valor_cop": 72000000
+  },
+  {
+    "cuenta_id": "c12",
+    "etapa": "Cliente activo",
+    "fecha_renovacion": "2027-02-26",
+    "valor_cop": 42000000
+  },
+  {
+    "cuenta_id": "c13",
+    "etapa": "Cliente activo",
+    "fecha_renovacion": "2027-04-28",
+    "valor_cop": 72000000
+  },
+  {
+    "cuenta_id": "c14",
+    "etapa": "Cliente activo",
+    "fecha_renovacion": "2027-02-17",
+    "valor_cop": 144000000
+  },
+  {
+    "cuenta_id": "c15",
+    "etapa": "Renovación en conversación",
+    "fecha_renovacion": "2026-11-04",
+    "valor_cop": 72000000
+  },
+  {
+    "cuenta_id": "c16",
+    "etapa": "Cliente activo",
+    "fecha_renovacion": "2027-04-22",
+    "valor_cop": 72000000
+  },
+  {
+    "cuenta_id": "c17",
+    "etapa": "Cliente activo",
+    "fecha_renovacion": "2026-12-23",
+    "valor_cop": 72000000
+  },
+  {
+    "cuenta_id": "c18",
+    "etapa": "Cliente activo",
+    "fecha_renovacion": "2027-06-13",
+    "valor_cop": 42000000
+  },
+  {
+    "cuenta_id": "c19",
+    "etapa": "Cliente activo",
+    "fecha_renovacion": "2027-02-26",
+    "valor_cop": 144000000
+  },
+  {
+    "cuenta_id": "c20",
+    "etapa": "Cliente activo",
+    "fecha_renovacion": "2027-05-15",
+    "valor_cop": 72000000
+  },
+  {
+    "cuenta_id": "c21",
+    "etapa": "Cliente activo",
+    "fecha_renovacion": "2027-03-02",
+    "valor_cop": 42000000
+  },
+  {
+    "cuenta_id": "c22",
+    "etapa": "Cliente activo",
+    "fecha_renovacion": "2027-01-01",
+    "valor_cop": 72000000
+  },
+  {
+    "cuenta_id": "c23",
+    "etapa": "Cliente activo",
+    "fecha_renovacion": "2027-02-09",
+    "valor_cop": 144000000
+  },
+  {
+    "cuenta_id": "c24",
+    "etapa": "Cliente activo",
+    "fecha_renovacion": "2027-05-21",
+    "valor_cop": 42000000
+  }
+]

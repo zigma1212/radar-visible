@@ -1,0 +1,8 @@
+cliente,numero,emitida,vence,valor,estado
+Educa Horizonte,FV-C12-004,2026-08-19,2026-09-03,3500000,vencida
+Educa Horizonte,FV-C12-003,2026-07-20,2026-08-04,3500000,pagada
+Fintec Aurora,FV-C05-004,2026-10-02,2026-10-17,12000000,pendiente
+Fintec Aurora,FV-C05-003,2026-09-02,2026-09-17,12000000,pagada
+Energia Solaris Andes S.A.S.,FV-C08-004,2026-09-10,2026-09-25,3500000,pagada
+Natalia Bermudez Cano,FV-C06-004,2026-09-14,2026-09-29,6000000,pagada
+Distribuidora El Faro Ltda,FV-X01-001,2026-09-20,2026-10-05,2800000,pendiente

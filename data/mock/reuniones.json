@@ -1,0 +1,641 @@
+[
+  {
+    "cuenta_id": "c01",
+    "fecha": "2026-08-29",
+    "tipo": "Seguimiento mensual",
+    "resumen": "Repaso de resultados del mes y ajuste del calendario de contenido.",
+    "frases_clave": [
+      "sigamos con el mismo ritmo",
+      "vamos bien"
+    ]
+  },
+  {
+    "cuenta_id": "c01",
+    "fecha": "2026-07-30",
+    "tipo": "Revisión de contenido",
+    "resumen": "Repaso de resultados del mes y ajuste del calendario de contenido.",
+    "frases_clave": [
+      "quiero contar la historia de la fundación",
+      "vamos bien"
+    ]
+  },
+  {
+    "cuenta_id": "c02",
+    "fecha": "2026-09-29",
+    "tipo": "Seguimiento mensual",
+    "resumen": "El cliente expresó dudas sobre el retorno del programa y su continuidad.",
+    "frases_clave": [
+      "no veo resultados",
+      "estoy pensando en pausar"
+    ]
+  },
+  {
+    "cuenta_id": "c02",
+    "fecha": "2026-08-31",
+    "tipo": "Revisión de contenido",
+    "resumen": "Sesión de estrategia: tono de voz y próximos hitos del programa.",
+    "frases_clave": [
+      "me escribieron dos personas por el post",
+      "vamos bien"
+    ]
+  },
+  {
+    "cuenta_id": "c02",
+    "fecha": "2026-07-25",
+    "tipo": "Sesión de estrategia",
+    "resumen": "Revisión de los últimos posts y definición de temas para el próximo mes.",
+    "frases_clave": [
+      "mi equipo comercial lo comentó",
+      "me escribieron dos personas por el post"
+    ]
+  },
+  {
+    "cuenta_id": "c03",
+    "fecha": "2026-09-18",
+    "tipo": "Seguimiento mensual",
+    "resumen": "Repaso de resultados del mes y ajuste del calendario de contenido.",
+    "frases_clave": [
+      "vamos bien",
+      "quiero contar la historia de la fundación"
+    ]
+  },
+  {
+    "cuenta_id": "c03",
+    "fecha": "2026-08-16",
+    "tipo": "Revisión de contenido",
+    "resumen": "Repaso de resultados del mes y ajuste del calendario de contenido.",
+    "frases_clave": [
+      "vamos bien",
+      "me gustó el enfoque de la semana pasada"
+    ]
+  },
+  {
+    "cuenta_id": "c03",
+    "fecha": "2026-07-18",
+    "tipo": "Sesión de estrategia",
+    "resumen": "Repaso de resultados del mes y ajuste del calendario de contenido.",
+    "frases_clave": [
+      "quiero contar la historia de la fundación",
+      "me gustó el enfoque de la semana pasada"
+    ]
+  },
+  {
+    "cuenta_id": "c04",
+    "fecha": "2026-09-21",
+    "tipo": "Seguimiento mensual",
+    "resumen": "Sesión de estrategia: tono de voz y próximos hitos del programa.",
+    "frases_clave": [
+      "me escribieron dos personas por el post",
+      "quiero contar la historia de la fundación"
+    ]
+  },
+  {
+    "cuenta_id": "c04",
+    "fecha": "2026-08-22",
+    "tipo": "Revisión de contenido",
+    "resumen": "Revisión de los últimos posts y definición de temas para el próximo mes.",
+    "frases_clave": [
+      "me gustó el enfoque de la semana pasada",
+      "me escribieron dos personas por el post"
+    ]
+  },
+  {
+    "cuenta_id": "c04",
+    "fecha": "2026-07-27",
+    "tipo": "Sesión de estrategia",
+    "resumen": "Sesión de estrategia: tono de voz y próximos hitos del programa.",
+    "frases_clave": [
+      "quiero contar la historia de la fundación",
+      "mi equipo comercial lo comentó"
+    ]
+  },
+  {
+    "cuenta_id": "c05",
+    "fecha": "2026-09-30",
+    "tipo": "Seguimiento mensual",
+    "resumen": "Sesión de estrategia: tono de voz y próximos hitos del programa.",
+    "frases_clave": [
+      "vamos bien",
+      "sigamos con el mismo ritmo"
+    ]
+  },
+  {
+    "cuenta_id": "c05",
+    "fecha": "2026-08-28",
+    "tipo": "Revisión de contenido",
+    "resumen": "Repaso de resultados del mes y ajuste del calendario de contenido.",
+    "frases_clave": [
+      "me escribieron dos personas por el post",
+      "vamos bien"
+    ]
+  },
+  {
+    "cuenta_id": "c05",
+    "fecha": "2026-07-26",
+    "tipo": "Sesión de estrategia",
+    "resumen": "Repaso de resultados del mes y ajuste del calendario de contenido.",
+    "frases_clave": [
+      "quiero contar la historia de la fundación",
+      "sigamos con el mismo ritmo"
+    ]
+  },
+  {
+    "cuenta_id": "c06",
+    "fecha": "2026-09-25",
+    "tipo": "Seguimiento mensual",
+    "resumen": "Repaso de resultados del mes y ajuste del calendario de contenido.",
+    "frases_clave": [
+      "sigamos con el mismo ritmo",
+      "vamos bien"
+    ]
+  },
+  {
+    "cuenta_id": "c06",
+    "fecha": "2026-08-29",
+    "tipo": "Revisión de contenido",
+    "resumen": "Revisión de los últimos posts y definición de temas para el próximo mes.",
+    "frases_clave": [
+      "vamos bien",
+      "me gustó el enfoque de la semana pasada"
+    ]
+  },
+  {
+    "cuenta_id": "c06",
+    "fecha": "2026-07-29",
+    "tipo": "Sesión de estrategia",
+    "resumen": "Sesión de estrategia: tono de voz y próximos hitos del programa.",
+    "frases_clave": [
+      "mi equipo comercial lo comentó",
+      "vamos bien"
+    ]
+  },
+  {
+    "cuenta_id": "c07",
+    "fecha": "2026-09-30",
+    "tipo": "Seguimiento mensual",
+    "resumen": "Sesión de estrategia: tono de voz y próximos hitos del programa.",
+    "frases_clave": [
+      "mi equipo comercial lo comentó",
+      "vamos bien"
+    ]
+  },
+  {
+    "cuenta_id": "c07",
+    "fecha": "2026-08-29",
+    "tipo": "Revisión de contenido",
+    "resumen": "Revisión de los últimos posts y definición de temas para el próximo mes.",
+    "frases_clave": [
+      "quiero contar la historia de la fundación",
+      "me escribieron dos personas por el post"
+    ]
+  },
+  {
+    "cuenta_id": "c08",
+    "fecha": "2026-09-20",
+    "tipo": "Seguimiento mensual",
+    "resumen": "Repaso de resultados del mes y ajuste del calendario de contenido.",
+    "frases_clave": [
+      "me escribieron dos personas por el post",
+      "mi equipo comercial lo comentó"
+    ]
+  },
+  {
+    "cuenta_id": "c08",
+    "fecha": "2026-08-23",
+    "tipo": "Revisión de contenido",
+    "resumen": "Sesión de estrategia: tono de voz y próximos hitos del programa.",
+    "frases_clave": [
+      "sigamos con el mismo ritmo",
+      "quiero contar la historia de la fundación"
+    ]
+  },
+  {
+    "cuenta_id": "c08",
+    "fecha": "2026-07-20",
+    "tipo": "Sesión de estrategia",
+    "resumen": "Sesión de estrategia: tono de voz y próximos hitos del programa.",
+    "frases_clave": [
+      "quiero contar la historia de la fundación",
+      "vamos bien"
+    ]
+  },
+  {
+    "cuenta_id": "c09",
+    "fecha": "2026-09-30",
+    "tipo": "Seguimiento mensual",
+    "resumen": "Revisión de los últimos posts y definición de temas para el próximo mes.",
+    "frases_clave": [
+      "quiero contar la historia de la fundación"
+    ]
+  },
+  {
+    "cuenta_id": "c09",
+    "fecha": "2026-08-29",
+    "tipo": "Revisión de contenido",
+    "resumen": "Repaso de resultados del mes y ajuste del calendario de contenido.",
+    "frases_clave": [
+      "quiero contar la historia de la fundación",
+      "mi equipo comercial lo comentó"
+    ]
+  },
+  {
+    "cuenta_id": "c09",
+    "fecha": "2026-08-01",
+    "tipo": "Sesión de estrategia",
+    "resumen": "Sesión de estrategia: tono de voz y próximos hitos del programa.",
+    "frases_clave": [
+      "mi equipo comercial lo comentó",
+      "me escribieron dos personas por el post"
+    ]
+  },
+  {
+    "cuenta_id": "c10",
+    "fecha": "2026-08-26",
+    "tipo": "Seguimiento mensual",
+    "resumen": "Repaso de resultados del mes y ajuste del calendario de contenido.",
+    "frases_clave": [
+      "me gustó el enfoque de la semana pasada",
+      "quiero contar la historia de la fundación"
+    ]
+  },
+  {
+    "cuenta_id": "c10",
+    "fecha": "2026-07-25",
+    "tipo": "Revisión de contenido",
+    "resumen": "Revisión de los últimos posts y definición de temas para el próximo mes.",
+    "frases_clave": [
+      "vamos bien",
+      "me escribieron dos personas por el post"
+    ]
+  },
+  {
+    "cuenta_id": "c10",
+    "fecha": "2026-06-21",
+    "tipo": "Sesión de estrategia",
+    "resumen": "Sesión de estrategia: tono de voz y próximos hitos del programa.",
+    "frases_clave": [
+      "mi equipo comercial lo comentó",
+      "me gustó el enfoque de la semana pasada"
+    ]
+  },
+  {
+    "cuenta_id": "c11",
+    "fecha": "2026-09-24",
+    "tipo": "Seguimiento mensual",
+    "resumen": "Revisión de los últimos posts y definición de temas para el próximo mes.",
+    "frases_clave": [
+      "vamos bien"
+    ]
+  },
+  {
+    "cuenta_id": "c11",
+    "fecha": "2026-08-24",
+    "tipo": "Revisión de contenido",
+    "resumen": "Sesión de estrategia: tono de voz y próximos hitos del programa.",
+    "frases_clave": [
+      "mi equipo comercial lo comentó"
+    ]
+  },
+  {
+    "cuenta_id": "c11",
+    "fecha": "2026-07-24",
+    "tipo": "Sesión de estrategia",
+    "resumen": "Sesión de estrategia: tono de voz y próximos hitos del programa.",
+    "frases_clave": [
+      "me escribieron dos personas por el post",
+      "quiero contar la historia de la fundación"
+    ]
+  },
+  {
+    "cuenta_id": "c12",
+    "fecha": "2026-09-19",
+    "tipo": "Seguimiento mensual",
+    "resumen": "Revisión de los últimos posts y definición de temas para el próximo mes.",
+    "frases_clave": [
+      "me gustó el enfoque de la semana pasada",
+      "sigamos con el mismo ritmo"
+    ]
+  },
+  {
+    "cuenta_id": "c12",
+    "fecha": "2026-08-17",
+    "tipo": "Revisión de contenido",
+    "resumen": "Sesión de estrategia: tono de voz y próximos hitos del programa.",
+    "frases_clave": [
+      "mi equipo comercial lo comentó",
+      "me gustó el enfoque de la semana pasada"
+    ]
+  },
+  {
+    "cuenta_id": "c12",
+    "fecha": "2026-07-21",
+    "tipo": "Sesión de estrategia",
+    "resumen": "Revisión de los últimos posts y definición de temas para el próximo mes.",
+    "frases_clave": [
+      "sigamos con el mismo ritmo",
+      "mi equipo comercial lo comentó"
+    ]
+  },
+  {
+    "cuenta_id": "c13",
+    "fecha": "2026-09-29",
+    "tipo": "Seguimiento mensual",
+    "resumen": "Repaso de resultados del mes y ajuste del calendario de contenido.",
+    "frases_clave": [
+      "me gustó el enfoque de la semana pasada"
+    ]
+  },
+  {
+    "cuenta_id": "c13",
+    "fecha": "2026-09-01",
+    "tipo": "Revisión de contenido",
+    "resumen": "Repaso de resultados del mes y ajuste del calendario de contenido.",
+    "frases_clave": [
+      "me escribieron dos personas por el post",
+      "vamos bien"
+    ]
+  },
+  {
+    "cuenta_id": "c13",
+    "fecha": "2026-07-29",
+    "tipo": "Sesión de estrategia",
+    "resumen": "Sesión de estrategia: tono de voz y próximos hitos del programa.",
+    "frases_clave": [
+      "vamos bien",
+      "quiero contar la historia de la fundación"
+    ]
+  },
+  {
+    "cuenta_id": "c14",
+    "fecha": "2026-09-21",
+    "tipo": "Seguimiento mensual",
+    "resumen": "Repaso de resultados del mes y ajuste del calendario de contenido.",
+    "frases_clave": [
+      "me gustó el enfoque de la semana pasada",
+      "sigamos con el mismo ritmo"
+    ]
+  },
+  {
+    "cuenta_id": "c14",
+    "fecha": "2026-08-24",
+    "tipo": "Revisión de contenido",
+    "resumen": "Sesión de estrategia: tono de voz y próximos hitos del programa.",
+    "frases_clave": [
+      "me escribieron dos personas por el post",
+      "vamos bien"
+    ]
+  },
+  {
+    "cuenta_id": "c14",
+    "fecha": "2026-07-19",
+    "tipo": "Sesión de estrategia",
+    "resumen": "Repaso de resultados del mes y ajuste del calendario de contenido.",
+    "frases_clave": [
+      "sigamos con el mismo ritmo",
+      "quiero contar la historia de la fundación"
+    ]
+  },
+  {
+    "cuenta_id": "c15",
+    "fecha": "2026-09-23",
+    "tipo": "Seguimiento mensual",
+    "resumen": "El cliente expresó dudas sobre el retorno del programa y su continuidad.",
+    "frases_clave": [
+      "el presupuesto está apretado este trimestre"
+    ]
+  },
+  {
+    "cuenta_id": "c15",
+    "fecha": "2026-08-25",
+    "tipo": "Revisión de contenido",
+    "resumen": "Repaso de resultados del mes y ajuste del calendario de contenido.",
+    "frases_clave": [
+      "sigamos con el mismo ritmo",
+      "me gustó el enfoque de la semana pasada"
+    ]
+  },
+  {
+    "cuenta_id": "c15",
+    "fecha": "2026-07-31",
+    "tipo": "Sesión de estrategia",
+    "resumen": "Repaso de resultados del mes y ajuste del calendario de contenido.",
+    "frases_clave": [
+      "me gustó el enfoque de la semana pasada",
+      "sigamos con el mismo ritmo"
+    ]
+  },
+  {
+    "cuenta_id": "c16",
+    "fecha": "2026-09-28",
+    "tipo": "Seguimiento mensual",
+    "resumen": "Repaso de resultados del mes y ajuste del calendario de contenido.",
+    "frases_clave": [
+      "sigamos con el mismo ritmo"
+    ]
+  },
+  {
+    "cuenta_id": "c17",
+    "fecha": "2026-09-29",
+    "tipo": "Seguimiento mensual",
+    "resumen": "Repaso de resultados del mes y ajuste del calendario de contenido.",
+    "frases_clave": [
+      "me escribieron dos personas por el post",
+      "vamos bien"
+    ]
+  },
+  {
+    "cuenta_id": "c17",
+    "fecha": "2026-08-31",
+    "tipo": "Revisión de contenido",
+    "resumen": "Sesión de estrategia: tono de voz y próximos hitos del programa.",
+    "frases_clave": [
+      "sigamos con el mismo ritmo",
+      "vamos bien"
+    ]
+  },
+  {
+    "cuenta_id": "c17",
+    "fecha": "2026-07-25",
+    "tipo": "Sesión de estrategia",
+    "resumen": "Revisión de los últimos posts y definición de temas para el próximo mes.",
+    "frases_clave": [
+      "vamos bien"
+    ]
+  },
+  {
+    "cuenta_id": "c18",
+    "fecha": "2026-09-25",
+    "tipo": "Seguimiento mensual",
+    "resumen": "Sesión de estrategia: tono de voz y próximos hitos del programa.",
+    "frases_clave": [
+      "quiero contar la historia de la fundación"
+    ]
+  },
+  {
+    "cuenta_id": "c18",
+    "fecha": "2026-08-24",
+    "tipo": "Revisión de contenido",
+    "resumen": "Revisión de los últimos posts y definición de temas para el próximo mes.",
+    "frases_clave": [
+      "vamos bien",
+      "mi equipo comercial lo comentó"
+    ]
+  },
+  {
+    "cuenta_id": "c18",
+    "fecha": "2026-07-23",
+    "tipo": "Sesión de estrategia",
+    "resumen": "Sesión de estrategia: tono de voz y próximos hitos del programa.",
+    "frases_clave": [
+      "vamos bien",
+      "sigamos con el mismo ritmo"
+    ]
+  },
+  {
+    "cuenta_id": "c19",
+    "fecha": "2026-09-28",
+    "tipo": "Seguimiento mensual",
+    "resumen": "Revisión de los últimos posts y definición de temas para el próximo mes.",
+    "frases_clave": [
+      "mi equipo comercial lo comentó",
+      "vamos bien"
+    ]
+  },
+  {
+    "cuenta_id": "c19",
+    "fecha": "2026-08-28",
+    "tipo": "Revisión de contenido",
+    "resumen": "Repaso de resultados del mes y ajuste del calendario de contenido.",
+    "frases_clave": [
+      "vamos bien"
+    ]
+  },
+  {
+    "cuenta_id": "c19",
+    "fecha": "2026-07-30",
+    "tipo": "Sesión de estrategia",
+    "resumen": "Repaso de resultados del mes y ajuste del calendario de contenido.",
+    "frases_clave": [
+      "me escribieron dos personas por el post",
+      "sigamos con el mismo ritmo"
+    ]
+  },
+  {
+    "cuenta_id": "c20",
+    "fecha": "2026-09-25",
+    "tipo": "Seguimiento mensual",
+    "resumen": "Repaso de resultados del mes y ajuste del calendario de contenido.",
+    "frases_clave": [
+      "me escribieron dos personas por el post",
+      "mi equipo comercial lo comentó"
+    ]
+  },
+  {
+    "cuenta_id": "c20",
+    "fecha": "2026-08-29",
+    "tipo": "Revisión de contenido",
+    "resumen": "Repaso de resultados del mes y ajuste del calendario de contenido.",
+    "frases_clave": [
+      "mi equipo comercial lo comentó",
+      "sigamos con el mismo ritmo"
+    ]
+  },
+  {
+    "cuenta_id": "c20",
+    "fecha": "2026-07-25",
+    "tipo": "Sesión de estrategia",
+    "resumen": "Sesión de estrategia: tono de voz y próximos hitos del programa.",
+    "frases_clave": [
+      "mi equipo comercial lo comentó",
+      "me escribieron dos personas por el post"
+    ]
+  },
+  {
+    "cuenta_id": "c21",
+    "fecha": "2026-09-22",
+    "tipo": "Seguimiento mensual",
+    "resumen": "Revisión de los últimos posts y definición de temas para el próximo mes.",
+    "frases_clave": [
+      "me escribieron dos personas por el post",
+      "sigamos con el mismo ritmo"
+    ]
+  },
+  {
+    "cuenta_id": "c21",
+    "fecha": "2026-08-23",
+    "tipo": "Revisión de contenido",
+    "resumen": "Revisión de los últimos posts y definición de temas para el próximo mes.",
+    "frases_clave": [
+      "sigamos con el mismo ritmo",
+      "me escribieron dos personas por el post"
+    ]
+  },
+  {
+    "cuenta_id": "c22",
+    "fecha": "2026-09-22",
+    "tipo": "Seguimiento mensual",
+    "resumen": "Sesión de estrategia: tono de voz y próximos hitos del programa.",
+    "frases_clave": [
+      "sigamos con el mismo ritmo",
+      "me escribieron dos personas por el post"
+    ]
+  },
+  {
+    "cuenta_id": "c22",
+    "fecha": "2026-08-24",
+    "tipo": "Revisión de contenido",
+    "resumen": "Revisión de los últimos posts y definición de temas para el próximo mes.",
+    "frases_clave": [
+      "me gustó el enfoque de la semana pasada",
+      "mi equipo comercial lo comentó"
+    ]
+  },
+  {
+    "cuenta_id": "c22",
+    "fecha": "2026-07-20",
+    "tipo": "Sesión de estrategia",
+    "resumen": "Sesión de estrategia: tono de voz y próximos hitos del programa.",
+    "frases_clave": [
+      "me escribieron dos personas por el post",
+      "quiero contar la historia de la fundación"
+    ]
+  },
+  {
+    "cuenta_id": "c23",
+    "fecha": "2026-09-26",
+    "tipo": "Seguimiento mensual",
+    "resumen": "Sesión de estrategia: tono de voz y próximos hitos del programa.",
+    "frases_clave": [
+      "me escribieron dos personas por el post",
+      "sigamos con el mismo ritmo"
+    ]
+  },
+  {
+    "cuenta_id": "c23",
+    "fecha": "2026-08-29",
+    "tipo": "Revisión de contenido",
+    "resumen": "Repaso de resultados del mes y ajuste del calendario de contenido.",
+    "frases_clave": [
+      "me gustó el enfoque de la semana pasada",
+      "me escribieron dos personas por el post"
+    ]
+  },
+  {
+    "cuenta_id": "c23",
+    "fecha": "2026-07-24",
+    "tipo": "Sesión de estrategia",
+    "resumen": "Revisión de los últimos posts y definición de temas para el próximo mes.",
+    "frases_clave": [
+      "me gustó el enfoque de la semana pasada"
+    ]
+  },
+  {
+    "cuenta_id": "c24",
+    "fecha": "2026-09-23",
+    "tipo": "Seguimiento mensual",
+    "resumen": "Sesión de estrategia: tono de voz y próximos hitos del programa.",
+    "frases_clave": [
+      "sigamos con el mismo ritmo"
+    ]
+  }
+]

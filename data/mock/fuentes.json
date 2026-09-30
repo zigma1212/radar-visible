@@ -1,0 +1,56 @@
+[
+  {
+    "id": "notion",
+    "nombre": "Notion (Clientes y Calendario)",
+    "modo": "simulado",
+    "ultima_lectura": "2026-10-05T06:00:00-05:00",
+    "notas": "Datos simulados. Real: consulta a las bases de datos Clientes y Calendario con la API de Notion.",
+    "disponibilidad": "a_confirmar",
+    "pregunta_validacion": "¿Los clientes aprueban en Notion o por WhatsApp?"
+  },
+  {
+    "id": "circleback",
+    "nombre": "Circleback (reuniones)",
+    "modo": "simulado",
+    "ultima_lectura": "2026-10-05T06:00:00-05:00",
+    "notas": "Datos simulados. Real: exportación o webhook de resúmenes de reunión de Circleback.",
+    "disponibilidad": "a_confirmar",
+    "pregunta_validacion": "¿Se graban reuniones con clientes?"
+  },
+  {
+    "id": "magnettu",
+    "nombre": "Magnettü (métricas de LinkedIn)",
+    "modo": "simulado",
+    "ultima_lectura": "2026-10-05T06:00:00-05:00",
+    "notas": "Datos simulados. Real: exportación de métricas por publicación desde Magnettü. Una cuenta nueva no tiene datos todavía.",
+    "disponibilidad": "a_confirmar",
+    "pregunta_validacion": "¿Qué métricas exporta por cliente?"
+  },
+  {
+    "id": "siigo",
+    "nombre": "Siigo (facturación)",
+    "modo": "simulado",
+    "ultima_lectura": "2026-10-05T06:00:00-05:00",
+    "notas": "Datos simulados. Real: API de Siigo, endpoint de facturas de venta.",
+    "disponibilidad": "probable",
+    "pregunta_validacion": null
+  },
+  {
+    "id": "pipedrive",
+    "nombre": "Pipedrive (renovaciones)",
+    "modo": "simulado",
+    "ultima_lectura": "2026-10-05T06:00:00-05:00",
+    "notas": "Datos simulados. Real: API de deals de Pipedrive.",
+    "disponibilidad": "probable",
+    "pregunta_validacion": null
+  },
+  {
+    "id": "slack",
+    "nombre": "Slack (entrega del brief)",
+    "modo": "simulado",
+    "ultima_lectura": "2026-10-05T06:00:00-05:00",
+    "notas": "Simulado: el brief se muestra como vista previa. Real: SLACK_WEBHOOK_URL.",
+    "disponibilidad": "probable",
+    "pregunta_validacion": null
+  }
+]

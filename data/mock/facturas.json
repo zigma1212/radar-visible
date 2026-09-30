@@ -1,0 +1,674 @@
+[
+  {
+    "cuenta_id": "c01",
+    "numero": "FV-C01-004",
+    "emitida": "2026-09-02",
+    "vence": "2026-09-17",
+    "valor_cop": 6000000,
+    "estado": "vencida"
+  },
+  {
+    "cuenta_id": "c01",
+    "numero": "FV-C01-003",
+    "emitida": "2026-08-03",
+    "vence": "2026-08-18",
+    "valor_cop": 6000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c02",
+    "numero": "FV-C02-004",
+    "emitida": "2026-10-02",
+    "vence": "2026-10-17",
+    "valor_cop": 12000000,
+    "estado": "pendiente"
+  },
+  {
+    "cuenta_id": "c02",
+    "numero": "FV-C02-003",
+    "emitida": "2026-09-02",
+    "vence": "2026-09-17",
+    "valor_cop": 12000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c02",
+    "numero": "FV-C02-002",
+    "emitida": "2026-08-03",
+    "vence": "2026-08-18",
+    "valor_cop": 12000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c02",
+    "numero": "FV-C02-001",
+    "emitida": "2026-07-04",
+    "vence": "2026-07-19",
+    "valor_cop": 12000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c03",
+    "numero": "FV-C03-004",
+    "emitida": "2026-10-02",
+    "vence": "2026-10-17",
+    "valor_cop": 12000000,
+    "estado": "pendiente"
+  },
+  {
+    "cuenta_id": "c03",
+    "numero": "FV-C03-003",
+    "emitida": "2026-09-02",
+    "vence": "2026-09-17",
+    "valor_cop": 12000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c03",
+    "numero": "FV-C03-002",
+    "emitida": "2026-08-03",
+    "vence": "2026-08-18",
+    "valor_cop": 12000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c03",
+    "numero": "FV-C03-001",
+    "emitida": "2026-07-04",
+    "vence": "2026-07-19",
+    "valor_cop": 12000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c04",
+    "numero": "FV-C04-004",
+    "emitida": "2026-10-02",
+    "vence": "2026-10-17",
+    "valor_cop": 3500000,
+    "estado": "pendiente"
+  },
+  {
+    "cuenta_id": "c04",
+    "numero": "FV-C04-003",
+    "emitida": "2026-09-02",
+    "vence": "2026-09-17",
+    "valor_cop": 3500000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c04",
+    "numero": "FV-C04-002",
+    "emitida": "2026-08-03",
+    "vence": "2026-08-18",
+    "valor_cop": 3500000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c04",
+    "numero": "FV-C04-001",
+    "emitida": "2026-07-04",
+    "vence": "2026-07-19",
+    "valor_cop": 3500000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c05",
+    "numero": "FV-C05-004",
+    "emitida": "2026-10-02",
+    "vence": "2026-10-17",
+    "valor_cop": 12000000,
+    "estado": "pendiente"
+  },
+  {
+    "cuenta_id": "c05",
+    "numero": "FV-C05-003",
+    "emitida": "2026-09-02",
+    "vence": "2026-09-17",
+    "valor_cop": 12000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c05",
+    "numero": "FV-C05-002",
+    "emitida": "2026-08-03",
+    "vence": "2026-08-18",
+    "valor_cop": 12000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c05",
+    "numero": "FV-C05-001",
+    "emitida": "2026-07-04",
+    "vence": "2026-07-19",
+    "valor_cop": 12000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c06",
+    "numero": "FV-C06-004",
+    "emitida": "2026-10-02",
+    "vence": "2026-10-17",
+    "valor_cop": 6000000,
+    "estado": "pendiente"
+  },
+  {
+    "cuenta_id": "c06",
+    "numero": "FV-C06-003",
+    "emitida": "2026-09-02",
+    "vence": "2026-09-17",
+    "valor_cop": 6000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c06",
+    "numero": "FV-C06-002",
+    "emitida": "2026-08-03",
+    "vence": "2026-08-18",
+    "valor_cop": 6000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c06",
+    "numero": "FV-C06-001",
+    "emitida": "2026-07-04",
+    "vence": "2026-07-19",
+    "valor_cop": 6000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c07",
+    "numero": "FV-C07-004",
+    "emitida": "2026-10-02",
+    "vence": "2026-10-17",
+    "valor_cop": 6000000,
+    "estado": "pendiente"
+  },
+  {
+    "cuenta_id": "c07",
+    "numero": "FV-C07-003",
+    "emitida": "2026-09-02",
+    "vence": "2026-09-17",
+    "valor_cop": 6000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c08",
+    "numero": "FV-C08-004",
+    "emitida": "2026-10-02",
+    "vence": "2026-10-17",
+    "valor_cop": 3500000,
+    "estado": "pendiente"
+  },
+  {
+    "cuenta_id": "c08",
+    "numero": "FV-C08-003",
+    "emitida": "2026-09-02",
+    "vence": "2026-09-17",
+    "valor_cop": 3500000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c08",
+    "numero": "FV-C08-002",
+    "emitida": "2026-08-03",
+    "vence": "2026-08-18",
+    "valor_cop": 3500000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c08",
+    "numero": "FV-C08-001",
+    "emitida": "2026-07-04",
+    "vence": "2026-07-19",
+    "valor_cop": 3500000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c09",
+    "numero": "FV-C09-004",
+    "emitida": "2026-09-12",
+    "vence": "2026-09-27",
+    "valor_cop": 6000000,
+    "estado": "vencida"
+  },
+  {
+    "cuenta_id": "c09",
+    "numero": "FV-C09-003",
+    "emitida": "2026-08-13",
+    "vence": "2026-08-28",
+    "valor_cop": 6000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c09",
+    "numero": "FV-C09-002",
+    "emitida": "2026-07-14",
+    "vence": "2026-07-29",
+    "valor_cop": 6000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c09",
+    "numero": "FV-C09-001",
+    "emitida": "2026-06-14",
+    "vence": "2026-06-29",
+    "valor_cop": 6000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c10",
+    "numero": "FV-C10-004",
+    "emitida": "2026-10-02",
+    "vence": "2026-10-17",
+    "valor_cop": 12000000,
+    "estado": "pendiente"
+  },
+  {
+    "cuenta_id": "c10",
+    "numero": "FV-C10-003",
+    "emitida": "2026-09-02",
+    "vence": "2026-09-17",
+    "valor_cop": 12000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c10",
+    "numero": "FV-C10-002",
+    "emitida": "2026-08-03",
+    "vence": "2026-08-18",
+    "valor_cop": 12000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c10",
+    "numero": "FV-C10-001",
+    "emitida": "2026-07-04",
+    "vence": "2026-07-19",
+    "valor_cop": 12000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c11",
+    "numero": "FV-C11-004",
+    "emitida": "2026-10-02",
+    "vence": "2026-10-17",
+    "valor_cop": 6000000,
+    "estado": "pendiente"
+  },
+  {
+    "cuenta_id": "c11",
+    "numero": "FV-C11-003",
+    "emitida": "2026-09-02",
+    "vence": "2026-09-17",
+    "valor_cop": 6000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c11",
+    "numero": "FV-C11-002",
+    "emitida": "2026-08-03",
+    "vence": "2026-08-18",
+    "valor_cop": 6000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c11",
+    "numero": "FV-C11-001",
+    "emitida": "2026-07-04",
+    "vence": "2026-07-19",
+    "valor_cop": 6000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c12",
+    "numero": "FV-C12-004",
+    "emitida": "2026-09-15",
+    "vence": "2026-09-30",
+    "valor_cop": 3500000,
+    "estado": "vencida"
+  },
+  {
+    "cuenta_id": "c12",
+    "numero": "FV-C12-003",
+    "emitida": "2026-08-16",
+    "vence": "2026-08-31",
+    "valor_cop": 3500000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c12",
+    "numero": "FV-C12-002",
+    "emitida": "2026-07-17",
+    "vence": "2026-08-01",
+    "valor_cop": 3500000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c12",
+    "numero": "FV-C12-001",
+    "emitida": "2026-06-17",
+    "vence": "2026-07-02",
+    "valor_cop": 3500000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c13",
+    "numero": "FV-C13-004",
+    "emitida": "2026-10-02",
+    "vence": "2026-10-17",
+    "valor_cop": 6000000,
+    "estado": "pendiente"
+  },
+  {
+    "cuenta_id": "c13",
+    "numero": "FV-C13-003",
+    "emitida": "2026-09-02",
+    "vence": "2026-09-17",
+    "valor_cop": 6000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c13",
+    "numero": "FV-C13-002",
+    "emitida": "2026-08-03",
+    "vence": "2026-08-18",
+    "valor_cop": 6000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c13",
+    "numero": "FV-C13-001",
+    "emitida": "2026-07-04",
+    "vence": "2026-07-19",
+    "valor_cop": 6000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c14",
+    "numero": "FV-C14-004",
+    "emitida": "2026-10-02",
+    "vence": "2026-10-17",
+    "valor_cop": 12000000,
+    "estado": "pendiente"
+  },
+  {
+    "cuenta_id": "c14",
+    "numero": "FV-C14-003",
+    "emitida": "2026-09-02",
+    "vence": "2026-09-17",
+    "valor_cop": 12000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c14",
+    "numero": "FV-C14-002",
+    "emitida": "2026-08-03",
+    "vence": "2026-08-18",
+    "valor_cop": 12000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c14",
+    "numero": "FV-C14-001",
+    "emitida": "2026-07-04",
+    "vence": "2026-07-19",
+    "valor_cop": 12000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c15",
+    "numero": "FV-C15-004",
+    "emitida": "2026-10-02",
+    "vence": "2026-10-17",
+    "valor_cop": 6000000,
+    "estado": "pendiente"
+  },
+  {
+    "cuenta_id": "c15",
+    "numero": "FV-C15-003",
+    "emitida": "2026-09-02",
+    "vence": "2026-09-17",
+    "valor_cop": 6000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c15",
+    "numero": "FV-C15-002",
+    "emitida": "2026-08-03",
+    "vence": "2026-08-18",
+    "valor_cop": 6000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c15",
+    "numero": "FV-C15-001",
+    "emitida": "2026-07-04",
+    "vence": "2026-07-19",
+    "valor_cop": 6000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c16",
+    "numero": "FV-C16-004",
+    "emitida": "2026-10-02",
+    "vence": "2026-10-17",
+    "valor_cop": 6000000,
+    "estado": "pendiente"
+  },
+  {
+    "cuenta_id": "c17",
+    "numero": "FV-C17-004",
+    "emitida": "2026-10-02",
+    "vence": "2026-10-17",
+    "valor_cop": 6000000,
+    "estado": "pendiente"
+  },
+  {
+    "cuenta_id": "c17",
+    "numero": "FV-C17-003",
+    "emitida": "2026-09-02",
+    "vence": "2026-09-17",
+    "valor_cop": 6000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c17",
+    "numero": "FV-C17-002",
+    "emitida": "2026-08-03",
+    "vence": "2026-08-18",
+    "valor_cop": 6000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c17",
+    "numero": "FV-C17-001",
+    "emitida": "2026-07-04",
+    "vence": "2026-07-19",
+    "valor_cop": 6000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c18",
+    "numero": "FV-C18-004",
+    "emitida": "2026-10-02",
+    "vence": "2026-10-17",
+    "valor_cop": 3500000,
+    "estado": "pendiente"
+  },
+  {
+    "cuenta_id": "c18",
+    "numero": "FV-C18-003",
+    "emitida": "2026-09-02",
+    "vence": "2026-09-17",
+    "valor_cop": 3500000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c18",
+    "numero": "FV-C18-002",
+    "emitida": "2026-08-03",
+    "vence": "2026-08-18",
+    "valor_cop": 3500000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c18",
+    "numero": "FV-C18-001",
+    "emitida": "2026-07-04",
+    "vence": "2026-07-19",
+    "valor_cop": 3500000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c19",
+    "numero": "FV-C19-004",
+    "emitida": "2026-10-02",
+    "vence": "2026-10-17",
+    "valor_cop": 12000000,
+    "estado": "pendiente"
+  },
+  {
+    "cuenta_id": "c19",
+    "numero": "FV-C19-003",
+    "emitida": "2026-09-02",
+    "vence": "2026-09-17",
+    "valor_cop": 12000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c19",
+    "numero": "FV-C19-002",
+    "emitida": "2026-08-03",
+    "vence": "2026-08-18",
+    "valor_cop": 12000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c19",
+    "numero": "FV-C19-001",
+    "emitida": "2026-07-04",
+    "vence": "2026-07-19",
+    "valor_cop": 12000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c20",
+    "numero": "FV-C20-004",
+    "emitida": "2026-10-02",
+    "vence": "2026-10-17",
+    "valor_cop": 6000000,
+    "estado": "pendiente"
+  },
+  {
+    "cuenta_id": "c20",
+    "numero": "FV-C20-003",
+    "emitida": "2026-09-02",
+    "vence": "2026-09-17",
+    "valor_cop": 6000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c20",
+    "numero": "FV-C20-002",
+    "emitida": "2026-08-03",
+    "vence": "2026-08-18",
+    "valor_cop": 6000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c20",
+    "numero": "FV-C20-001",
+    "emitida": "2026-07-04",
+    "vence": "2026-07-19",
+    "valor_cop": 6000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c21",
+    "numero": "FV-C21-004",
+    "emitida": "2026-10-02",
+    "vence": "2026-10-17",
+    "valor_cop": 3500000,
+    "estado": "pendiente"
+  },
+  {
+    "cuenta_id": "c21",
+    "numero": "FV-C21-003",
+    "emitida": "2026-09-02",
+    "vence": "2026-09-17",
+    "valor_cop": 3500000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c22",
+    "numero": "FV-C22-004",
+    "emitida": "2026-10-02",
+    "vence": "2026-10-17",
+    "valor_cop": 6000000,
+    "estado": "pendiente"
+  },
+  {
+    "cuenta_id": "c22",
+    "numero": "FV-C22-003",
+    "emitida": "2026-09-02",
+    "vence": "2026-09-17",
+    "valor_cop": 6000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c22",
+    "numero": "FV-C22-002",
+    "emitida": "2026-08-03",
+    "vence": "2026-08-18",
+    "valor_cop": 6000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c22",
+    "numero": "FV-C22-001",
+    "emitida": "2026-07-04",
+    "vence": "2026-07-19",
+    "valor_cop": 6000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c23",
+    "numero": "FV-C23-004",
+    "emitida": "2026-10-02",
+    "vence": "2026-10-17",
+    "valor_cop": 12000000,
+    "estado": "pendiente"
+  },
+  {
+    "cuenta_id": "c23",
+    "numero": "FV-C23-003",
+    "emitida": "2026-09-02",
+    "vence": "2026-09-17",
+    "valor_cop": 12000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c23",
+    "numero": "FV-C23-002",
+    "emitida": "2026-08-03",
+    "vence": "2026-08-18",
+    "valor_cop": 12000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c23",
+    "numero": "FV-C23-001",
+    "emitida": "2026-07-04",
+    "vence": "2026-07-19",
+    "valor_cop": 12000000,
+    "estado": "pagada"
+  },
+  {
+    "cuenta_id": "c24",
+    "numero": "FV-C24-004",
+    "emitida": "2026-10-02",
+    "vence": "2026-10-17",
+    "valor_cop": 3500000,
+    "estado": "pendiente"
+  }
+]

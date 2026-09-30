@@ -1,0 +1,26 @@
+[
+  {
+    "id": "bm1",
+    "nombre": "Valentina Correa",
+    "email": "valentina.correa@ejemplo.co",
+    "capacidad_max": 6
+  },
+  {
+    "id": "bm2",
+    "nombre": "Julián Botero",
+    "email": "julian.botero@ejemplo.co",
+    "capacidad_max": 8
+  },
+  {
+    "id": "bm3",
+    "nombre": "Mariana Uribe",
+    "email": "mariana.uribe@ejemplo.co",
+    "capacidad_max": 7
+  },
+  {
+    "id": "bm4",
+    "nombre": "Tomás Escallón",
+    "email": "tomas.escallon@ejemplo.co",
+    "capacidad_max": 8
+  }
+]
