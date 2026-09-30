@@ -1,7 +1,9 @@
 <!-- radar/README.md · Radar · Interés compuesto a la vista · todos los datos de la demo son inventados -->
 # Radar · Interés compuesto a la vista
 
-> **Para verlo en dos minutos:** `npm install && npm run dev` y abrir http://localhost:3000. Empieza por **/diagnostico** (el porqué) y sigue con el botón "Ver el radar funcionando". Detalle en [Arranque en 3 comandos](#arranque-en-3-comandos). Todos los datos son inventados.
+> **Demo en línea:** https://radar-visible.vercel.app (modo plantilla: sin clave de IA, para que cualquiera pueda probarla).
+>
+> **Para verlo en tu máquina en dos minutos:** `npm install && npm run dev` y abrir http://localhost:3000. Empieza por **/diagnostico** (el porqué) y sigue con el botón "Ver el radar funcionando". Detalle en [Arranque en 3 comandos](#arranque-en-3-comandos). Todos los datos son inventados.
 
 ## Para el equipo de Visible (sin tecnicismos)
 
