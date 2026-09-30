@@ -172,3 +172,33 @@ describe("mensaje de Slack", () => {
     expect(vista(conTitulo).match(/Brief del lunes/g)).toHaveLength(1);
   });
 });
+
+describe("menciones en Slack", () => {
+  it("lee el mapa nombre=ID de SLACK_MENCIONES, sin distinguir tildes ni mayúsculas", async () => {
+    const { mapaMenciones } = await import("../../slack");
+    const m = mapaMenciones("Pedro=U01PEDRO, valentina correa = U02VALE ,basura,=X");
+    expect(m.get("pedro")).toBe("U01PEDRO");
+    expect(m.get("valentina correa")).toBe("U02VALE");
+    expect(m.size).toBe(2);
+  });
+  it("menciona con <@ID> a quien tiene ID y en negrita a quien no; agrupa acciones por dueño", async () => {
+    const { lineaResponsables } = await import("../../slack");
+    const acciones = [
+      { titulo: "Llamada de Pedro esta semana", cuenta_id: "c02", empresa: "Logística Ríoseco", dueno: "CEO" as const, dueno_nombre: "Pedro" },
+      { titulo: "Enviar nota de avance", cuenta_id: "c03", empresa: "Agroexport Cumbres", dueno: "BM" as const, dueno_nombre: "Valentina Correa" },
+      { titulo: "Enviar nota de avance", cuenta_id: "c01", empresa: "Andina Seguros", dueno: "BM" as const, dueno_nombre: "Valentina Correa" },
+    ];
+    const l = lineaResponsables(acciones, new Map([["pedro", "U01PEDRO"]]));
+    expect(l).toContain("<@U01PEDRO>");
+    expect(l).toContain("*Valentina Correa*");
+    expect(l).toContain("*Valentina Correa* · 2 acciones");
+    expect(l).toContain("<@U01PEDRO> · 1 acción");
+    expect(l.match(/Valentina/g)).toHaveLength(1);
+  });
+  it("sin variable, el mensaje de Slack igual trae la línea de responsables", async () => {
+    const { bloquesSlack } = await import("../../slack");
+    const { panorama } = await cargarPanorama();
+    const b = await briefLunes(panorama);
+    expect(JSON.stringify(bloquesSlack(b))).toContain("Responsables");
+  });
+});
