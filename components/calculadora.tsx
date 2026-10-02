@@ -27,7 +27,7 @@ export function Calculadora() {
         <p className="eyebrow">Calculadora</p>
         <h2 id="calc-h" className="h2">¿Cuánto vale anticipar una renovación?</h2>
         <p className="muted small" style={{ marginTop: 4 }}>
-          Sin números de ejemplo: pon los tuyos. Es el valor de lo que sigue después de renovar, más lo que costaría reponer esa cuenta con una nueva.
+          Sin números de ejemplo: pon los tuyos. Es un escenario potencial de ingresos y reposición, no ROI ni una renovación salvada. Ingreso no es margen; suma adquisición solo si ese costo realmente se evita.
         </p>
       </div>
       <div className="grid gap-3 md:grid-cols-3">

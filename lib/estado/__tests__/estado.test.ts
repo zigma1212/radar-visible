@@ -14,7 +14,7 @@ afterEach(() => {
   for (const d of dirs.splice(0)) rmSync(d, { recursive: true, force: true });
 });
 
-const nueva = { cuenta_id: "c01", empresa: "Andina Seguros", brand_manager: "Valentina", borrador: "Hola", modo: "plantilla" as const };
+const nueva = { cuenta_id: "c01", empresa: "Andina Seguros", brand_manager: "Valentina", borrador: "Hola", modo: "plantilla" as const, evidencia_disponible: true };
 
 describe("almacén de estado", () => {
   it("aprobar persiste tras recargar y queda en auditoría", () => {
@@ -42,6 +42,44 @@ describe("almacén de estado", () => {
     expect(() => a.resolverNota("no-existe", "aprobar")).toThrow(/no encontrada/);
   });
 
+  it("bloquea aprobar sin evidencia incluso si se edita y permite descartar", () => {
+    const dir = tmp();
+    const a = new AlmacenEstado(dir);
+    const n = a.crearNota({ ...nueva, evidencia_disponible: false });
+    expect(n.estado).toBe("bloqueada");
+    const b = new AlmacenEstado(dir);
+    expect(() => b.resolverNota(n.id, "aprobar", "Un texto distinto")).toThrow(/evidencia/i);
+    expect(b.obtenerNota(n.id)?.texto_final).toBeNull();
+    expect(b.listarAuditoria().some((x) => x.accion.startsWith("nota_aprobada"))).toBe(false);
+    expect(b.resolverNota(n.id, "descartar").estado).toBe("descartada");
+  });
+
+  it("no permite aprobar un borrador antiguo sin evidencia verificada", () => {
+    const dir = tmp();
+    const a = new AlmacenEstado(dir);
+    const n = a.crearNota(nueva);
+    const { evidencia_disponible: omitida, ...antigua } = n;
+    void omitida;
+    writeFileSync(join(dir, "estado.json"), JSON.stringify({ notas: [antigua], auditoria: [] }));
+    const b = new AlmacenEstado(dir);
+    expect(() => b.resolverNota(n.id, "aprobar")).toThrow(/evidencia/i);
+    expect(b.obtenerNota(n.id)?.estado).not.toBe("aprobada");
+  });
+
+  it("advierte que el almacenamiento en Vercel es efímero aunque pueda escribir", () => {
+    const original = process.env.VERCEL;
+    try {
+      process.env.VERCEL = "1";
+      const a = new AlmacenEstado(tmp());
+      a.crearNota(nueva);
+      expect(a.solo_memoria).toBe(false);
+      expect(a.persistencia).toBe("efimera");
+    } finally {
+      if (original === undefined) delete process.env.VERCEL;
+      else process.env.VERCEL = original;
+    }
+  });
+
   it("registra envíos del brief", () => {
     const a = new AlmacenEstado(tmp());
     a.registrar("brief_vista_previa", "Pedro");
@@ -55,6 +93,7 @@ describe("almacén de estado", () => {
     const a = new AlmacenEstado(join(archivoBloqueador, "sub")); // mkdir falla: el padre es un archivo
     const n = a.crearNota(nueva);
     expect(a.solo_memoria).toBe(true);
+    expect(a.persistencia).toBe("memoria");
     a.resolverNota(n.id, "aprobar");
     expect(a.obtenerNota(n.id)!.estado).toBe("aprobada");
   });

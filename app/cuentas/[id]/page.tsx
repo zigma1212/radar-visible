@@ -87,7 +87,7 @@ export default async function DetalleCuenta({ params }: { params: Promise<{ id: 
           <section className="card grid gap-2" aria-labelledby="donde">
             <h2 id="donde" className="h2">Dónde está en la curva</h2>
             <Curva puntos={[{ id: c.id, etiqueta: c.empresa, mes: c.mes_programa, semaforo: c.semaforo }]} destacado={c.id} />
-            <p className="small muted">Empezó el {fechaLarga(d.empresaCliente.fecha_inicio)}. {enPlana ? "Está en la parte plana: lo normal es que el resultado aún no se vea, y lo normal también es que el cliente dude." : "Fuera de la parte plana."}</p>
+            <p className="small muted">Empezó el {fechaLarga(d.empresaCliente.fecha_inicio)}. {enPlana ? "Su mes de programa cae en la parte plana de esta curva ilustrativa. Eso no demuestra falta de resultados ni dudas del cliente; revisa las señales." : "Fuera de la parte plana."}</p>
           </section>
 
           <section className="card" aria-labelledby="senales">
@@ -100,7 +100,7 @@ export default async function DetalleCuenta({ params }: { params: Promise<{ id: 
         <div className="grid gap-5">
           <section className="card grid gap-3" aria-labelledby="accion">
             <h2 id="accion" className="h2">Nota de avance</h2>
-            <p className="muted small">La IA arma un borrador con los datos reales de la cuenta. El brand manager lo edita y decide; nada se envía solo.</p>
+            <p className="muted small">La IA arma un borrador con los datos disponibles de la cuenta (simulados en esta demo). El brand manager lo edita y decide; nada se envía solo.</p>
             <GenerarNota cuentaId={c.id} empresa={c.empresa} />
           </section>
 

@@ -13,7 +13,7 @@ export async function PATCH(req: Request, ctx: { params: Promise<{ id: string }>
   }
   try {
     const nota = estado().resolverNota(id, accion, typeof cuerpo.texto === "string" ? cuerpo.texto : undefined);
-    return NextResponse.json(nota);
+    return NextResponse.json({ ...nota, persistencia: estado().persistencia });
   } catch (e) {
     if (e instanceof ErrorEstado) return NextResponse.json({ error: e.message }, { status: e.codigo === "no_encontrada" ? 404 : 409 });
     throw e;

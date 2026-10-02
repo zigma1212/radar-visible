@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 export async function GET() {
   const e = estado();
   const notas = e.listarNotas();
-  return NextResponse.json({ notas, auditoria: e.listarAuditoria(), solo_memoria: e.solo_memoria });
+  return NextResponse.json({ notas, auditoria: e.listarAuditoria(), solo_memoria: e.solo_memoria, persistencia: e.persistencia });
 }
 
 // POST { cuenta_id } -> { id, borrador, modo, proveedor, nota }
@@ -27,7 +27,8 @@ export async function POST(req: Request) {
     empresa: detalle.empresa,
     brand_manager: detalle.brand_manager.nombre,
     borrador: n.borrador,
+    evidencia_disponible: n.evidencia !== null,
     modo: n.modo,
   });
-  return NextResponse.json({ id: nota.id, borrador: nota.borrador, modo: nota.modo, proveedor: n.proveedor, nota });
+  return NextResponse.json({ id: nota.id, borrador: nota.borrador, modo: nota.modo, proveedor: n.proveedor, persistencia: estado().persistencia, nota });
 }

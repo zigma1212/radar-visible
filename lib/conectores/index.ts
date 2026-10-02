@@ -46,6 +46,7 @@ export async function leerTodo(): Promise<DatosRadar> {
     reuniones: c?.datos ?? null,
     publicaciones: m?.datos ?? null,
     facturas: s?.datos ?? null,
+    procedencia_siigo: s?.procedencia_por_cuenta,
     deals: p?.datos ?? null,
     leido_en: {
       notion: n?.leido_en ?? null,

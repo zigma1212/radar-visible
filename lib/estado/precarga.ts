@@ -29,6 +29,7 @@ export async function precargarBandeja(almacen: AlmacenEstado): Promise<Nota[]> 
           empresa: detalle.empresa,
           brand_manager: detalle.brand_manager.nombre,
           borrador: n.borrador,
+          evidencia_disponible: n.evidencia !== null,
           modo: n.modo,
         });
       } catch {

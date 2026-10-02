@@ -64,7 +64,7 @@ export function ImportarFacturas({ activa: inicial }: { activa: ImportacionActiv
       <div className="card grid gap-3">
         <h2 className="h2">Subir facturas</h2>
         <p className="muted small">
-          Un CSV exportado de tu programa contable con las columnas <code>cliente, numero, emitida, vence, valor, estado</code>. También sirven los encabezados de Siigo (Cliente, Número, Fecha, Vencimiento, Total, Estado). Los nombres de cliente se emparejan con las cuentas sin importar tildes ni mayúsculas.
+          Un CSV exportado de tu programa contable con las columnas <code>cliente, numero, emitida, vence, valor, estado</code>. También sirven los encabezados de Siigo (Cliente, Número, Fecha, Vencimiento, Total, Estado). Los nombres de cliente se emparejan con las cuentas sin importar tildes ni mayúsculas. Si hay filas inválidas, se rechaza el archivo completo y se conservan los datos anteriores.
         </p>
         <div className="flex flex-wrap items-center gap-3">
           <label className="btn btn-primary" style={{ cursor: busy ? "wait" : "pointer" }}>

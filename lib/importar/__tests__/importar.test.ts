@@ -2,7 +2,7 @@ import { mkdtempSync, readFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import { emparejarCuenta, leerFacturasCSV, normalizarNombre, parsearCSV, parsearFecha, parsearValor, prepararImportacion, ErrorImportacion } from "../facturas";
+import { emparejarCuenta, leerFacturasCSV, normalizarNombre, parsearCSV, parsearEstado, parsearFecha, parsearValor, prepararImportacion, ErrorImportacion } from "../facturas";
 import { deshacerImportacion, importarFacturas } from "../servicio";
 import { cargarPanorama } from "../../radar";
 import { leerFuentes } from "../../conectores";
@@ -17,6 +17,9 @@ const cuentas = [
 const ejemplo = readFileSync(join(__dirname, "..", "..", "..", "data", "ejemplos", "facturas-ejemplo.csv"), "utf8");
 
 describe("parser CSV", () => {
+  it("rechaza comillas sin cerrar en lugar de aceptar un estado truncado", () => {
+    expect(() => parsearCSV('cliente,estado\nEduca Horizonte,"pagada')).toThrow(ErrorImportacion);
+  });
   it("respeta comillas, punto y coma y BOM", () => {
     const t = '﻿Cliente;Número;Total\r\n"Educa; Horizonte";F-1;"3.500.000"\r\n';
     expect(parsearCSV(t)).toEqual([["Cliente", "Número", "Total"], ["Educa; Horizonte", "F-1", "3.500.000"]]);
@@ -31,8 +34,19 @@ describe("parser CSV", () => {
   it("fechas ISO y DD/MM/AAAA; rechaza inválidas", () => {
     expect(parsearFecha("2026-09-03")).toBe("2026-09-03");
     expect(parsearFecha("03/09/2026")).toBe("2026-09-03");
+    expect(parsearFecha("2026-09-031")).toBeNull();
+    expect(parsearFecha("2026-09-03T14:30:00Z")).toBe("2026-09-03");
     expect(parsearFecha("31/02/2026")).toBeNull();
     expect(parsearFecha("ayer")).toBeNull();
+  });
+  it("clasifica estados completos sin confundir negados ni parciales con pagadas", () => {
+    expect(parsearEstado("pagada")).toBe("pagada");
+    expect(parsearEstado("No pagada")).toBe("pendiente");
+    expect(parsearEstado("Parcialmente pagada")).toBe("pendiente");
+    expect(parsearEstado("unpaid")).toBe("pendiente");
+    expect(parsearEstado("anulada")).toBe("anulada");
+    expect(parsearEstado("pagadísima" as string)).toBeNull();
+    expect(parsearEstado("estado desconocido")).toBeNull();
   });
   it("acepta encabezados tipo Siigo en cualquier caja", () => {
     const csv = "CLIENTE,Número,Fecha,VENCIMIENTO,Total,Estado\nEduca Horizonte,F-9,01/08/2026,15/08/2026,\"$1.000.000\",Pendiente";
@@ -76,6 +90,15 @@ describe("importación real: cambia el semáforo y se puede deshacer", () => {
   beforeEach(() => { dir = mkdtempSync(join(tmpdir(), "radar-imp-")); process["env"].RADAR_DATA_DIR = dir; });
   afterEach(() => { delete process["env"].RADAR_DATA_DIR; rmSync(dir, { recursive: true, force: true }); });
 
+  it("conserva deuda previa cuando el CSV tiene comillas sin cerrar", async () => {
+    const previa = await importarFacturas("cliente,numero,emitida,vence,valor,estado\nEduca Horizonte,PREV-1,2026-08-01,2026-08-15,200000,vencida", "previa.csv");
+    const antes = readFileSync(join(dir, "estado.json"), "utf8");
+    await expect(importarFacturas('cliente,numero,emitida,vence,valor,estado\nEduca Horizonte,NUEVA-1,2026-09-01,2026-10-01,300000,"pagada', "truncada.csv")).rejects.toThrow(ErrorImportacion);
+    expect(readFileSync(join(dir, "estado.json"), "utf8")).toBe(antes);
+    expect((await cargarPanorama()).datos.leido_en.siigo).toBe(previa.importada_en);
+    expect((await cargarPanorama()).panorama.cuentas.find((c) => c.id === "c12")?.semaforo).toBe("ambar");
+  });
+
   it("una factura vencida importada vuelve ámbar a una cuenta verde, y deshacer lo revierte", async () => {
     const base = await cargarPanorama();
     expect(base.panorama.cuentas.find((c) => c.id === "c12")?.semaforo).toBe("verde");
@@ -98,5 +121,33 @@ describe("importación real: cambia el semáforo y se puede deshacer", () => {
     expect((await cargarPanorama()).panorama.cuentas.find((c) => c.id === "c12")?.semaforo).toBe("verde");
     expect((await leerFuentes()).fuentes.find((f) => f.id === "siigo")?.modo).toBe("simulado");
     expect((await deshacerImportacion()).deshecha).toBe(false);
+  });
+
+  it("una importación de una cuenta no atribuye su fecha CSV a las cuentas simuladas", async () => {
+    const base = await cargarPanorama();
+    const selloMock = base.panorama.cuentas.find((c) => c.id === "c01")!.senales.find((s) => s.fuente === "siigo")!.leido_en;
+    const csv = "cliente,numero,emitida,vence,valor,estado\nEduca Horizonte,F-1,2026-08-01,2026-08-15,100000,vencida";
+    const res = await importarFacturas(csv, "solo-educa.csv");
+    const { panorama } = await cargarPanorama();
+    const mock = panorama.cuentas.find((c) => c.id === "c01")!.senales.find((s) => s.fuente === "siigo")!;
+    const real = panorama.cuentas.find((c) => c.id === "c12")!.senales.find((s) => s.fuente === "siigo")!;
+    expect(mock.leido_en).toBe(selloMock);
+    expect(real.leido_en).toBe(res.importada_en);
+    expect(mock.explicacion).toMatch(/simulad/i);
+    expect(real.explicacion).toMatch(/CSV/i);
+  });
+
+  it("rechaza el archivo completo si mezcla una fila válida con una inválida y conserva la deuda previa", async () => {
+    const deudaPrevia = "cliente,numero,emitida,vence,valor,estado\nEduca Horizonte,PREV-1,2026-08-01,2026-08-15,100000,pagada\nEduca Horizonte,PREV-2,2026-08-01,2026-08-20,200000,vencida";
+    const previa = await importarFacturas(deudaPrevia, "previa.csv");
+    expect(previa.facturas_importadas).toBe(2);
+    expect((await cargarPanorama()).panorama.cuentas.find((c) => c.id === "c12")?.semaforo).toBe("ambar");
+
+    const mixta = "cliente,numero,emitida,vence,valor,estado\nEduca Horizonte,NUEVA-1,2026-09-01,2026-10-01,300000,pagada\nEduca Horizonte,NUEVA-2,2026-09-01,no-es-fecha,400000,vencida";
+    await expect(importarFacturas(mixta, "mixta.csv")).rejects.toThrow(
+      'No se importó el archivo: línea 3 — Fecha de vencimiento no válida ("no-es-fecha")',
+    );
+    expect((await cargarPanorama()).panorama.cuentas.find((c) => c.id === "c12")?.semaforo).toBe("ambar");
+    expect((await cargarPanorama()).datos.leido_en.siigo).toBe(previa.importada_en);
   });
 });

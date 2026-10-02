@@ -4,7 +4,9 @@ import { marcaDeTiempo } from "../fecha";
 
 import type { Factura } from "../tipos";
 
-export type EstadoNota = "borrador" | "aprobada" | "descartada";
+export type PersistenciaEstado = "archivo" | "efimera" | "memoria";
+
+export type EstadoNota = "borrador" | "bloqueada" | "aprobada" | "descartada";
 
 export interface Nota {
   id: string;
@@ -12,6 +14,7 @@ export interface Nota {
   empresa: string;
   brand_manager: string;
   borrador: string;
+  evidencia_disponible?: boolean;
   texto_final: string | null;
   estado: EstadoNota;
   modo: "ia" | "plantilla";
@@ -45,13 +48,14 @@ export interface NuevaNota {
   empresa: string;
   brand_manager: string;
   borrador: string;
+  evidencia_disponible: boolean;
   modo: "ia" | "plantilla";
 }
 
 export class ErrorEstado extends Error {
   constructor(
     mensaje: string,
-    public codigo: "no_encontrada" | "ya_resuelta",
+    public codigo: "no_encontrada" | "ya_resuelta" | "sin_evidencia",
   ) {
     super(mensaje);
   }
@@ -66,6 +70,10 @@ export class AlmacenEstado {
   private dir: string;
   private memoria: Contenido | null = null;
   solo_memoria = false;
+
+  get persistencia(): PersistenciaEstado {
+    return this.solo_memoria ? "memoria" : process["env"].VERCEL ? "efimera" : "archivo";
+  }
 
   constructor(dir: string) {
     this.dir = dir;
@@ -147,7 +155,7 @@ export class AlmacenEstado {
       id: `n_${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`,
       ...n,
       texto_final: null,
-      estado: "borrador",
+      estado: n.evidencia_disponible ? "borrador" : "bloqueada",
       creada_en: ahora,
       actualizada_en: ahora,
     };
@@ -161,7 +169,9 @@ export class AlmacenEstado {
     const c = this.leer();
     const nota = c.notas.find((n) => n.id === id);
     if (!nota) throw new ErrorEstado("Nota no encontrada", "no_encontrada");
-    if (nota.estado !== "borrador") throw new ErrorEstado(`La nota ya está ${nota.estado}`, "ya_resuelta");
+    if (nota.estado !== "borrador" && nota.estado !== "bloqueada") throw new ErrorEstado(`La nota ya está ${nota.estado}`, "ya_resuelta");
+    if (accion === "aprobar" && nota.evidencia_disponible !== true)
+      throw new ErrorEstado("No se puede aprobar sin evidencia. Revisa los datos y genera una nueva nota desde la cuenta.", "sin_evidencia");
     const ahora = marcaDeTiempo();
     nota.estado = accion === "aprobar" ? "aprobada" : "descartada";
     nota.texto_final = accion === "aprobar" ? (texto?.trim() ? texto : nota.borrador) : null;

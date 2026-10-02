@@ -162,6 +162,7 @@ export function calcularSenales(cuenta: Cuenta, datos: DatosRadar, hoyStr: strin
   }
 
   // 4) Factura vencida (Siigo)
+  const procedenciaSiigo = datos.procedencia_siigo?.[cuenta.id];
   const facs = datos.facturas?.filter((f) => f.cuenta_id === cuenta.id) ?? [];
   const umbralFac = `> ${U.factura.atencionDias} atención, > ${U.factura.riesgoDias} riesgo`;
   if (!datos.facturas || facs.length === 0) {
@@ -178,8 +179,8 @@ export function calcularSenales(cuenta: Cuenta, datos: DatosRadar, hoyStr: strin
       valor: dias,
       umbral: umbralFac,
       severidad: sevMayorQue(dias, U.factura.atencionDias, U.factura.riesgoDias),
-      leido_en: L.siigo ?? null,
-      explicacion: dias > 0 ? `Tema administrativo: tiene una factura vencida hace ${plural(dias, "día", "días")}.` : "Tema administrativo: no tiene facturas vencidas.",
+      leido_en: procedenciaSiigo?.leido_en ?? L.siigo ?? null,
+      explicacion: (dias > 0 ? `Tema administrativo: tiene una factura vencida hace ${plural(dias, "día", "días")}.` : "Tema administrativo: no tiene facturas vencidas.") + (procedenciaSiigo ? (procedenciaSiigo.modo === "real_csv" ? " Fuente: CSV importado." : " Fuente: datos simulados.") : ""),
     });
   }
 

@@ -1,7 +1,7 @@
 import { estado } from "../estado";
 import { cargarPanorama } from "../radar";
 import { marcaDeTiempo } from "../fecha";
-import { prepararImportacion, type ResultadoLectura } from "./facturas";
+import { ErrorImportacion, prepararImportacion, type ResultadoLectura } from "./facturas";
 import type { Semaforo } from "../tipos";
 
 export interface CambioSemaforo { cuenta_id: string; empresa: string; antes: Semaforo; despues: Semaforo }
@@ -23,6 +23,10 @@ function cambios(antes: Awaited<ReturnType<typeof cargarPanorama>>, despues: Awa
 export async function importarFacturas(texto: string, archivo: string): Promise<ResumenImportacion> {
   const antes = await cargarPanorama();
   const r = prepararImportacion(texto, antes.datos.cuentas, antes.panorama.hoy);
+  if (r.invalidas.length) {
+    const detalle = r.invalidas.map((x) => `línea ${x.linea} — ${x.motivo}`).join("; ");
+    throw new ErrorImportacion(`No se importó el archivo: ${detalle}`);
+  }
   const { facturas, ...resto } = r;
   const importada_en = marcaDeTiempo();
   if (facturas.length) estado().guardarImportacion({ importada_en, archivo, filas_leidas: r.filas_leidas, facturas });

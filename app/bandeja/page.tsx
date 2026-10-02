@@ -12,9 +12,9 @@ export default async function BandejaPage() {
       <header>
         <p className="eyebrow">Brand manager</p>
         <h1 className="h1">Bandeja de notas</h1>
-        <p className="muted" style={{ marginTop: 6 }}>Cada borrador usa datos reales de la cuenta. Edita lo que quieras, luego aprueba o descarta: nada sale sin una persona. Puedes generar más desde la ficha de cada cuenta.</p>
+        <p className="muted" style={{ marginTop: 6 }}>Cada borrador usa los datos disponibles de la cuenta (simulados en esta demo). Sin evidencia, queda bloqueado. Edita lo que quieras, luego aprueba o descarta: nada sale sin una persona. Puedes generar más desde la ficha de cada cuenta.</p>
       </header>
-      <Bandeja inicial={notas} />
+      <Bandeja inicial={notas} persistenciaInicial={estado().persistencia} />
     </div>
   );
 }

@@ -31,7 +31,7 @@ export function accionDeCuenta(senales: Senal[], zona: Zona, bm: BrandManager): 
       titulo: "Enviar nota de avance",
       dueno: "BM",
       dueno_nombre: bm.nombre,
-      motivo: "La cuenta está en la parte plana y el avance aún no se ve: hay que mostrar lo acumulado antes de la renovación.",
+      motivo: "La cuenta está en la parte plana y tiene señales de atención: conviene revisar lo acumulado con el cliente antes de renovar.",
     };
   }
   // 3. Factura vencida sin otras señales -> recordatorio de pago

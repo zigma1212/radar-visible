@@ -47,7 +47,7 @@ const PISTAS = [
 const CANDIDATOS = [
   { n: "Tablero que una Notion, Pipedrive y Siigo", w: "Un tablero sin pregunta de negocio es un tablero más" },
   { n: "Bot que escriba contenido", w: "Choca con la tesis de Visible: “usar la tecnología sin entregarle el criterio”" },
-  { n: "Flujo de lead a cliente", w: "Importante, pero Visible ya vende con la marca del fundador; cuidar lo que ya se ganó rinde más por peso invertido" },
+  { n: "Flujo de lead a cliente", w: "Importante; elegí un piloto semanal con fechas y acciones verificables. Su retorno frente a adquisición aún debe medirse" },
   { n: "Operación de brand managers", w: "Queda incluida: el radar ordena su semana" },
 ];
 
@@ -60,13 +60,14 @@ const DISTINTO = [
 
 const PRINCIPIOS = [
   ["Lo desconocido nunca se pinta verde.", " Si una fuente no leyó, la cuenta dice “sin lectura”."],
-  ["Funciona con lo mínimo y mejora con más.", " Con Siigo y Pipedrive ya sirve; cada fuente adicional suma precisión."],
+  ["Funciona con lo mínimo y mejora con más.", " Siigo y Pipedrive permiten un piloto administrativo. La lectura editorial requiere Notion y Magnettü; ese modo reducido aún no está implementado en la demo."],
   ["La IA hace el borrador, el humano pone el criterio.", " Nada llega al cliente sin aprobación."],
   ["Vive donde ya trabajan.", " Slack para el brief; lo demás, en la herramienta de siempre."],
   ["Sobrevive sin mí.", " Umbrales en un solo archivo, manual para no técnicos y una guía para conectar cada herramienta real."],
 ];
 
 const SUPUESTOS = [
+  "Piloto inicial: cuentas recurrentes con fecha de renovación; medir preparación del brief y cumplimiento de acciones.",
   "Dónde aprueban realmente los clientes: Notion o WhatsApp.",
   "Si Circleback graba reuniones con clientes.",
   "Qué exporta Magnettü por cliente.",
@@ -157,7 +158,7 @@ export default async function Diagnostico() {
           <Reveal className="dx-conn" d={200}>
             <span className="dot" aria-hidden="true" />
             <p className="dx-lead">
-              En la parte plana antes de la renovación, el avance existe pero no se siente. El riesgo no es el trabajo: es que nadie lo vea a tiempo.
+              Hipótesis: reunir las pistas puede ayudar a mostrar el avance y actuar antes de renovar. No descarto calidad, precio o expectativas. La curva es ilustrativa, no predictiva.
             </p>
           </Reveal>
         </section>
@@ -187,7 +188,7 @@ export default async function Diagnostico() {
               </div>
             ))}
           </Reveal>
-          <Reveal><p className="dx-lead">Cada brand manager ve su pedazo. El CEO ve el total solo cuando pregunta.</p></Reveal>
+          <Reveal><p className="dx-lead">El brief declara consultas por WhatsApp. Infiero un costo de reconstruir el panorama; validaría qué seguimiento y reportes ya existen.</p></Reveal>
         </section>
 
         <section id="porque" className="dx-sec dx-soft" aria-labelledby="h-porque">
@@ -212,7 +213,7 @@ export default async function Diagnostico() {
           <Reveal><h2 id="h-valor" className="dx-h">Cuánto vale</h2></Reveal>
           <Reveal>
             <p className="dx-lead" style={{ maxWidth: "60ch" }}>
-              No tengo los números de Visible, así que no invento una cifra. La calculadora trae los campos vacíos: valor de la cuenta, meses que suele durar, costo de conseguir una nueva. Pedro pone sus números y ve cuánto vale anticipar una sola renovación.
+              No tengo los números de Visible, así que no invento una cifra. La calculadora trae los campos vacíos: valor de la cuenta, meses que suele durar, costo de conseguir una nueva. Pedro explora un escenario potencial, no ROI ni renovación salvada. Ingreso no es margen; la adquisición evitada debe demostrarse.
             </p>
           </Reveal>
           <Reveal><div style={{ maxWidth: 980 }}><Calculadora /></div></Reveal>

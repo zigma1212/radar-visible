@@ -86,7 +86,10 @@ export interface Fuente {
   pregunta_validacion: string | null;
 }
 
+export interface ProcedenciaLectura { leido_en: string; modo: ModoFuente }
+
 export interface Lectura<T> {
+  procedencia_por_cuenta?: Record<string, ProcedenciaLectura>;
   datos: T;
   leido_en: string;
   modo: ModoFuente;
@@ -101,6 +104,7 @@ export interface DatosRadar {
   publicaciones: Publicacion[] | null;
   facturas: Factura[] | null;
   deals: Deal[] | null;
+  procedencia_siigo?: Record<string, ProcedenciaLectura>;
   /** Momento de lectura por fuente; null si no se leyó. */
   leido_en: Partial<Record<FuenteId, string | null>>;
 }

@@ -27,7 +27,8 @@ const pct = (x: number) => Math.round(x * 100);
 export function evidenciaDe(d: CuentaDetalle, hoyStr: string = hoy()): EvidenciaNota | null {
   const pubs = d.metricas?.publicaciones;
   if (!pubs || pubs.length === 0) return null;
-  const orden = [...pubs].sort((a, b) => a.fecha.localeCompare(b.fecha));
+  const orden = pubs.filter((p) => p.fecha <= hoyStr).sort((a, b) => a.fecha.localeCompare(b.fecha));
+  if (orden.length === 0) return null;
   const primera = orden[0].fecha;
   const prim = orden.filter((p) => diasEntre(primera, p.fecha) < 30);
   const ult = orden.filter((p) => diasEntre(p.fecha, hoyStr) < 90);
@@ -72,8 +73,8 @@ export function notaPlantilla(d: CuentaDetalle, ev: EvidenciaNota): string {
   const lineas = [
     `Hola ${primerNombre(d.cliente)},`,
     "",
-    `Quiero mostrarte con tus propios números cómo va ${d.empresa}. Hasta hoy tu contenido suma ${fmtNum(ev.toques_acumulados)} toques acumulados (impresiones) en ${ev.publicaciones_totales} publicaciones.`,
-    `En tu primer mes tuviste ${fmtNum(a.impresiones)} impresiones; en los últimos 90 días, en promedio, ${fmtNum(b.impresiones)} al mes. Los primeros meses se ven planos, y es normal: cada publicación suma sobre las anteriores, como el interés compuesto.`,
+    `Quiero mostrarte con tus propios números cómo va ${d.empresa}. Hasta hoy tu contenido suma ${fmtNum(ev.toques_acumulados)} impresiones acumuladas en ${ev.publicaciones_totales} publicaciones.`,
+    `En tu primer mes tuviste ${fmtNum(a.impresiones)} impresiones; en los últimos 90 días, en promedio, ${fmtNum(b.impresiones)} al mes. Miramos el periodo completo: una publicación aislada no cuenta toda la historia. La constancia no garantiza resultados.`,
   ];
   if (mejoras.length) lineas.push(`Lo que ya se mueve por debajo de esa línea: ${mejoras.slice(0, 3).join("; ")}.`);
   lineas.push(

@@ -9,11 +9,11 @@
 
 ### Qué es
 
-Pedro lo dice así: "Cada publicación deja un rastro de confianza que ninguna métrica registra". El valor de Visible se acumula despacio y en silencio, y hoy ese rastro no lo ve ni el cliente ocupado ni el CEO a tiempo.
+Pedro lo dice así: "Cada publicación deja un rastro de confianza que ninguna métrica registra". El brief describe información dispersa. Mi hipótesis es que reunir esas pistas reduce el trabajo de reconstruir el panorama y ayuda a decidir a quién atender antes de renovar; no prueba ausencia de seguimiento ni mide confianza literalmente.
 
 El Radar junta en una pantalla las pistas que ya existen en cinco herramientas (Notion, Circleback, Magnettü, Siigo, Pipedrive) y responde una pregunta cada lunes: **en qué cuentas hay que mostrar lo acumulado antes de la renovación, y quién lo hace**. La IA solo redacta borradores; las personas deciden y envían. Nada llega a un cliente sin aprobación.
 
-Funciona con lo mínimo (Siigo + Pipedrive) y gana precisión con cada fuente que se sume. Si una fuente crítica no leyó, la cuenta dice **"Sin lectura"** en vez de **"Avanzando"**. Con datos simulados, el radar trata esos datos como si fueran reales: la etiqueta "Datos simulados" lo recuerda.
+Siigo + Pipedrive permiten plantear un piloto administrativo de facturas y fechas. La lectura editorial requiere Notion y Magnettü; el modo reducido aún no está implementado en esta demo. Si una fuente crítica no leyó, la cuenta dice **"Sin lectura"** en vez de **"Avanzando"**. Con datos simulados, el radar trata esos datos como si fueran reales: la etiqueta "Datos simulados" lo recuerda.
 
 Esta versión es una demo: las cuentas, los nombres y las cifras son inventados, salvo lo que se importe desde un CSV (ver más abajo).
 
@@ -21,7 +21,7 @@ Esta versión es una demo: las cuentas, los nombres y las cifras son inventados,
 
 1. Abrir el **Brief** (página de inicio): resumen, curva y tres acciones con dueño.
 2. Entrar a las cuentas de "Prioridad esta semana" y "Mirar de cerca"; cada señal dice de qué fuente sale y cuándo se leyó.
-3. Si hay que mostrarle al cliente lo acumulado, generar la **nota de avance**, editarla y aprobarla en la Bandeja.
+3. Si hay evidencia disponible, generar la **nota de avance**, editarla y aprobarla en la Bandeja. Sin evidencia queda bloqueada y solo puede descartarse; las notas antiguas sin bandera de evidencia deben regenerarse. Los cambios de texto solo se guardan al aprobar.
 4. Dudas puntuales: **Preguntar**.
 
 El manual por rol está en `docs/manual-usuario.md`. La página **Ayuda** dentro de la app trae la versión corta.
@@ -34,7 +34,7 @@ El manual por rol está en `docs/manual-usuario.md`. La página **Ayuda** dentro
 4. La pantalla muestra filas leídas, clientes emparejados, los que no se pudieron emparejar y los cambios de semáforo.
 5. **Deshacer importación** devuelve Siigo a los datos simulados.
 
-Detalles: los nombres se emparejan con la empresa o el nombre del cliente sin importar tildes, mayúsculas ni sufijos como S.A.S. o Ltda; si un nombre es ambiguo o no se parece a ninguna cuenta, se ignora y se avisa (no se adivina). Las facturas importadas reemplazan a las simuladas solo de las cuentas emparejadas. La fuente Siigo pasa a "Real (CSV)" y su fecha de lectura es la del momento de importar. Se guarda en `.data/estado.json`.
+Detalles: los nombres se emparejan con la empresa o el nombre del cliente sin importar tildes, mayúsculas ni sufijos como S.A.S. o Ltda; si un nombre es ambiguo o no se parece a ninguna cuenta, se ignora y se avisa (no se adivina). Las facturas importadas reemplazan a las simuladas solo de las cuentas emparejadas. La fuente Siigo pasa a "Real (CSV)" y su fecha de lectura es la del momento de importar. Cada cuenta mantiene su procedencia: CSV importado o datos simulados, con su propia fecha de lectura. Si hay filas inválidas, se rechaza el archivo completo y se conserva la importación anterior. En local se guarda en `.data/estado.json`; en Vercel el almacenamiento es efímero y, si falla la escritura, solo en memoria. La Bandeja lo avisa: copia lo necesario antes de reiniciar. Esta demo no garantiza historial durable.
 
 ### Si algo falla
 
@@ -49,7 +49,7 @@ Detalles: los nombres se emparejan con la empresa o el nombre del cliente sin im
 
 ### Primer día con datos reales (checklist)
 
-Qué pedir o exportar de cada herramienta, en este orden (Siigo y Pipedrive dan el mínimo útil):
+Qué pedir o exportar de cada herramienta, en este orden (Siigo y Pipedrive permiten empezar por un piloto administrativo; la lectura editorial requiere las otras fuentes):
 
 - [ ] **Siigo**: exportar a CSV las facturas de venta con cliente, número, fecha, vencimiento, total y estado; importarlas en `/importar`. Verificar que los clientes queden emparejados.
 - [ ] **Pipedrive**: lista de negocios de cada cuenta activa con etapa y **fecha de renovación** (o cómo se registra la renovación en programas corporativos y cohortes).

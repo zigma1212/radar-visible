@@ -10,8 +10,8 @@ export function calcularMetricas(
   hoyStr: string,
   leidoEn: string | null,
 ): Metricas | null {
-  if (pubs.length === 0) return null;
-  const orden = [...pubs].sort((a, b) => a.fecha.localeCompare(b.fecha));
+  const orden = pubs.filter((p) => p.fecha <= hoyStr).sort((a, b) => a.fecha.localeCompare(b.fecha));
+  if (orden.length === 0) return null;
   const primera = orden[0].fecha;
   const ult = orden.filter((p) => diasEntre(p.fecha, hoyStr) < 30);
   const prim = orden.filter((p) => diasEntre(primera, p.fecha) < 30);

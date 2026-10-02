@@ -3,28 +3,31 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { llamar } from "./api";
 import { ErrorNote, ModoTag } from "./ui";
+import type { PersistenciaEstado } from "@/lib/estado";
 import { fechaHora } from "./format";
 
 interface Nota {
   id: string; cuenta_id: string; empresa: string; brand_manager: string; borrador: string;
+  evidencia_disponible?: boolean; persistencia?: PersistenciaEstado;
   texto_final?: string | null; estado: string; modo: string; creada_en: string; actualizada_en?: string;
 }
-type Estado = "borrador" | "aprobada" | "descartada";
+type Estado = "borrador" | "bloqueada" | "aprobada" | "descartada";
 const norm = (e?: string): Estado => {
   const x = (e ?? "").toLowerCase();
-  return x.startsWith("aprob") ? "aprobada" : x.startsWith("descart") ? "descartada" : "borrador";
+  return x.startsWith("aprob") ? "aprobada" : x.startsWith("descart") ? "descartada" : x === "bloqueada" ? "bloqueada" : "borrador";
 };
-const ETIQUETA: Record<Estado, string> = { borrador: "Pendiente de revisión", aprobada: "Aprobada", descartada: "Descartada" };
-const CHIP: Record<Estado, string> = { borrador: "p-ambar", aprobada: "p-verde", descartada: "p-sin_lectura" };
+const ETIQUETA: Record<Estado, string> = { bloqueada: "Sin evidencia · bloqueada", borrador: "Pendiente de revisión", aprobada: "Aprobada", descartada: "Descartada" };
+const CHIP: Record<Estado, string> = { bloqueada: "p-sin_lectura", borrador: "p-ambar", aprobada: "p-verde", descartada: "p-sin_lectura" };
 
-export function Bandeja({ inicial }: { inicial?: Nota[] }) {
+export function Bandeja({ inicial, persistenciaInicial }: { inicial?: Nota[]; persistenciaInicial?: PersistenciaEstado }) {
+  const [persistencia, setPersistencia] = useState(persistenciaInicial);
   const [notas, setNotas] = useState<Nota[] | null>(inicial ?? null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     if (inicial) return;
-    llamar<{ notas: Nota[] }>("/api/notas").then((r) => {
-      if (r.ok) setNotas(r.data.notas); else { setError(r.error); setNotas([]); }
+    llamar<{ notas: Nota[]; persistencia: PersistenciaEstado }>("/api/notas").then((r) => {
+      if (r.ok) { setNotas(r.data.notas); setPersistencia(r.data.persistencia); } else { setError(r.error); setNotas([]); }
     });
   }, [inicial]);
 
@@ -42,6 +45,7 @@ export function Bandeja({ inicial }: { inicial?: Nota[] }) {
 
   return (
     <div className="grid gap-4">
+      {persistencia !== "archivo" ? <div className="note note-info" role="status">Almacenamiento {persistencia === "memoria" ? "solo en memoria" : "temporal"}: las notas y su auditoría pueden perderse al reiniciar. Copia lo necesario; esta demo no garantiza historial duradero.</div> : null}
       {error ? <ErrorNote>{error}</ErrorNote> : null}
       {!error && visibles.length === 0 ? (
         <div className="card empty">
@@ -52,14 +56,15 @@ export function Bandeja({ inicial }: { inicial?: Nota[] }) {
         </div>
       ) : null}
       {visibles.map((n) => (
-        <NotaCard key={n.id} nota={n} onCambio={(u) => setNotas((p) => (p ?? []).map((x) => (x.id === u.id ? u : x)))} />
+        <NotaCard key={n.id} nota={n} temporal={persistencia !== "archivo"} onCambio={(u) => { if (u.persistencia) setPersistencia(u.persistencia); setNotas((p) => (p ?? []).map((x) => (x.id === u.id ? u : x))); }} />
       ))}
     </div>
   );
 }
 
-function NotaCard({ nota, onCambio }: { nota: Nota; onCambio: (n: Nota) => void }) {
-  const estado = norm(nota.estado);
+function NotaCard({ nota, onCambio, temporal }: { nota: Nota; onCambio: (n: Nota) => void; temporal: boolean }) {
+  const original = norm(nota.estado);
+  const estado = original === "borrador" && nota.evidencia_disponible !== true ? "bloqueada" : original;
   const [texto, setTexto] = useState(nota.texto_final || nota.borrador);
   const [busy, setBusy] = useState<"aprobar" | "descartar" | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -101,9 +106,13 @@ function NotaCard({ nota, onCambio }: { nota: Nota; onCambio: (n: Nota) => void 
 
       {error ? <ErrorNote>{error}</ErrorNote> : null}
 
-      {estado === "borrador" ? (
+      {estado === "borrador" ? <p className="small muted">Los cambios solo se guardan al aprobar. Copia el borrador si necesitas salir sin aprobarlo.</p> : null}
+
+      {estado === "bloqueada" ? <div className="note note-err" role="status">No se puede aprobar esta nota: falta evidencia verificada. Revisa los datos y genera una nueva desde la ficha de la cuenta.</div> : null}
+
+      {estado === "borrador" || estado === "bloqueada" ? (
         <div className="flex flex-wrap gap-2">
-          <button className="btn btn-primary" onClick={() => accion("aprobar")} disabled={busy !== null || texto.trim().length === 0}>
+          <button className="btn btn-primary" onClick={() => accion("aprobar")} disabled={estado === "bloqueada" || busy !== null || texto.trim().length === 0}>
             {busy === "aprobar" ? <><span className="spinner" aria-hidden="true" /> Aprobando…</> : "Aprobar"}
           </button>
           <button className="btn btn-danger" onClick={() => accion("descartar")} disabled={busy !== null}>
@@ -115,7 +124,7 @@ function NotaCard({ nota, onCambio }: { nota: Nota; onCambio: (n: Nota) => void 
       {estado === "aprobada" ? (
         <div className="note note-ok grid gap-2" role="status">
           <strong>Lista para enviar al cliente</strong>
-          <span>La aprobó una persona y quedó en la auditoría. Cópiala y envíala por el canal que use el cliente.</span>
+          <span>{temporal ? "La aprobó una persona y quedó registrada en esta sesión temporal. Copia la nota y su registro antes de reiniciar." : "La aprobó una persona y quedó en la auditoría local. Cópiala y envíala por el canal que use el cliente."}</span>
           <button className="btn btn-primary btn-sm" onClick={copiar} style={{ justifySelf: "start" }}>{copiado ? "Copiado" : "Copiar nota"}</button>
         </div>
       ) : null}

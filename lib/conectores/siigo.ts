@@ -1,7 +1,7 @@
 import facturas from "../../data/mock/facturas.json";
 import { lecturaMock } from "./mock";
 import { estado } from "../estado";
-import type { Factura, Lectura } from "../tipos";
+import type { Factura, Lectura, ProcedenciaLectura } from "../tipos";
 
 /** Siigo: facturas de venta por cliente (estado y vencimiento). Prefiere las importadas por CSV (/importar). */
 export async function leer(): Promise<Lectura<Factura[]>> {
@@ -10,7 +10,12 @@ export async function leer(): Promise<Lectura<Factura[]>> {
   // Fuente real (CSV): las facturas importadas mandan para las cuentas emparejadas; el resto sigue simulado.
   const cubiertas = new Set(imp.facturas.map((f) => f.cuenta_id));
   const datos = [...(facturas as Factura[]).filter((f) => !cubiertas.has(f.cuenta_id)), ...imp.facturas];
-  return { datos, leido_en: imp.importada_en, modo: "real_csv" };
+  const mock = lecturaMock(facturas as Factura[]);
+  const procedencia_por_cuenta: Record<string, ProcedenciaLectura> = {};
+  for (const f of datos) procedencia_por_cuenta[f.cuenta_id] = cubiertas.has(f.cuenta_id)
+    ? { leido_en: imp.importada_en, modo: "real_csv" }
+    : { leido_en: mock.leido_en, modo: "simulado" };
+  return { datos, leido_en: imp.importada_en, modo: "real_csv", procedencia_por_cuenta };
 }
 
 /* ============================================================================

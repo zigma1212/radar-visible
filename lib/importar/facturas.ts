@@ -45,6 +45,7 @@ export function parsearCSV(texto: string): string[][] {
       filas.push(fila); fila = [];
     } else celda += ch;
   }
+  if (entre) throw new ErrorImportacion("No se importó el archivo: hay comillas sin cerrar en el CSV.");
   if (celda !== "" || fila.length) { fila.push(celda); filas.push(fila); }
   return filas.filter((f) => f.some((c) => c.trim() !== ""));
 }
@@ -70,13 +71,16 @@ export function parsearValor(s: string): number | null {
   return Number.isFinite(n) ? Math.round(n) : null;
 }
 
-/** Acepta AAAA-MM-DD (o ISO) y DD/MM/AAAA. Devuelve AAAA-MM-DD o null. */
+/** Acepta AAAA-MM-DD, timestamps ISO completos y DD/MM/AAAA. Devuelve AAAA-MM-DD o null. */
 export function parsearFecha(s: string): string | null {
   const v = s.trim();
   let y: number, m: number, d: number;
-  let r = /^(\d{4})-(\d{1,2})-(\d{1,2})/.exec(v);
+  let r = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v);
   if (r) { y = +r[1]; m = +r[2]; d = +r[3]; }
-  else if ((r = /^(\d{1,2})[/.-](\d{1,2})[/.-](\d{4})$/.exec(v))) { d = +r[1]; m = +r[2]; y = +r[3]; }
+  else if ((r = /^(\d{4})-(\d{2})-(\d{2})T\d{2}:\d{2}(?::\d{2}(?:\.\d{1,3})?)?(?:Z|[+-]\d{2}:\d{2})$/.exec(v))) {
+    if (!Number.isFinite(Date.parse(v))) return null;
+    y = +r[1]; m = +r[2]; d = +r[3];
+  } else if ((r = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(v))) { d = +r[1]; m = +r[2]; y = +r[3]; }
   else return null;
   const f = new Date(Date.UTC(y, m - 1, d));
   if (f.getUTCFullYear() !== y || f.getUTCMonth() !== m - 1 || f.getUTCDate() !== d) return null;
@@ -85,11 +89,11 @@ export function parsearFecha(s: string): string | null {
 
 /** "pagada" | "pendiente" | "vencida"; "anulada" si hay que saltar la fila; null si no se entiende. */
 export function parsearEstado(s: string): Factura["estado"] | "anulada" | null {
-  const t = quitarAcentos(s).trim();
-  if (/anulad/.test(t)) return "anulada";
-  if (/(pagad|paga$|cobrad|paid)/.test(t)) return "pagada";
-  if (/vencid|mora/.test(t)) return "vencida";
-  if (/(pendiente|abierta|emitida|por cobrar|sin pagar|parcial)/.test(t)) return "pendiente";
+  const t = quitarAcentos(s).trim().replace(/\s+/g, " ");
+  if (["anulada", "anulado", "anuladas", "anulados"].includes(t)) return "anulada";
+  if (["no pagada", "no pagado", "parcial", "parcialmente pagada", "parcialmente pagado", "unpaid", "pendiente", "pendientes", "abierta", "abiertas", "emitida", "emitidas", "por cobrar", "sin pagar"].includes(t)) return "pendiente";
+  if (["pagada", "pagado", "cobrada", "cobrado", "paid"].includes(t)) return "pagada";
+  if (["vencida", "vencido", "mora"].includes(t)) return "vencida";
   return null;
 }
 

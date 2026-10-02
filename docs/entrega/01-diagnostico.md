@@ -4,11 +4,11 @@ Autor: Miguel Tusso · 30/09/2026
 
 ## En una frase
 
-El producto de Visible es confianza acumulada, y esa confianza, como dice Pedro, "deja un rastro que ninguna métrica registra". Hoy ese rastro es invisible justo para dos personas: el cliente ocupado, que no ve avanzar lo que paga, y el CEO, que no sabe a tiempo qué cuenta necesita atención antes de su renovación. Las pistas existen, pero viven en cinco herramientas que no se hablan.
+El producto de Visible es confianza acumulada, y esa confianza, como dice Pedro, "deja un rastro que ninguna métrica registra". Mi hipótesis es que reunir las pistas de avance y atención puede ayudar al cliente ocupado y al CEO antes de una renovación. El brief describe información dispersa entre herramientas; no demuestra que Visible carezca de seguimiento. El radar propone reducir el trabajo de reconstruirla, no medir la confianza literalmente.
 
 ## 1. Cómo llegué aquí
 
-Leí tres meses de publicaciones de Pedro Mejía y de la página de Visible, la sección de personas y el brief del concurso. No tengo acceso a sus datos, así que no voy a afirmar que Visible pierde clientes. Lo que sí puedo mostrar es que hoy no tendría cómo saberlo a tiempo.
+Leí tres meses de publicaciones de Pedro Mejía y de la página de Visible, la sección de personas y el brief del concurso. No tengo acceso a sus datos, así que no voy a afirmar que Visible pierde clientes. El brief sí permite identificar fragmentación; que reunir esas pistas adelante acciones es una hipótesis para validar con el equipo.
 
 Tres ideas de Pedro sostienen el diagnóstico:
 
@@ -16,7 +16,7 @@ Tres ideas de Pedro sostienen el diagnóstico:
 - "Nadie acumula riqueza a los seis meses de ahorrar. Nadie se posiciona en el octavo post. Pero ahí es donde casi todos abandonan."
 - "La primera regla del interés compuesto es no interrumpirlo."
 
-Si el valor de Visible se acumula lento y en silencio, el riesgo del negocio no es la calidad del trabajo: es que el cliente, o el propio equipo, no lo vea a tiempo y la curva se interrumpa antes de la renovación.
+Si el valor de Visible se acumula lento y en silencio, un riesgo posible es que el cliente o el equipo no vean el avance a tiempo. No descarto calidad, expectativas o precio como causas: sin datos internos no puedo atribuir pérdidas a una sola.
 
 ### El patrón que Visible repite en público
 
@@ -31,7 +31,7 @@ En tres meses, Pedro y la página de Visible vuelven una y otra vez a la misma i
 | Pedro, "a mí también me va como los perros en misa" | "Las métricas son vanidad, pero también son información." |
 | Pedro, sobre los 11 toques | "La constancia no es una virtud: es el requisito mínimo." |
 
-Si Visible necesita recordarle esto a su audiencia cada semana, es razonable pensar que también tiene que recordárselo a sus propios clientes. Lo que no tiene es una forma sistemática de saber a quién y cuándo.
+Si Visible necesita recordarle esto a su audiencia cada semana, es razonable pensar que también tiene que recordárselo a sus propios clientes. Queda por confirmar cómo lo hacen hoy y si el radar mejora a quién atender y cuándo.
 
 ## 2. Por qué es invisible hoy
 
@@ -44,7 +44,7 @@ Si Visible necesita recordarle esto a su audiencia cada semana, es razonable pen
 | La renovación se acerca | Pipedrive | Probable |
 | Y cuando alguien quiere saber cómo va un cliente | Lo pregunta por WhatsApp | Hecho declarado en el brief |
 
-Cada brand manager ve su pedazo. El CEO ve el total solo cuando pregunta.
+La consulta por WhatsApp está declarada en el brief. Infiero un costo de reconstruir el panorama; validaría qué seguimiento y reportes ya existen antes de reemplazarlos.
 
 ## 3. Por qué este problema y no otro
 
@@ -52,13 +52,13 @@ Cada brand manager ve su pedazo. El CEO ve el total solo cuando pregunta.
 |---|---|
 | Tablero que una Notion, Pipedrive y Siigo | Un tablero sin pregunta de negocio es un tablero más |
 | Bot que escriba contenido | Choca con la tesis de Visible: "usar la tecnología sin entregarle el criterio" |
-| Flujo de lead a cliente | Importante, pero Visible ya vende con la marca del fundador; cuidar lo que ya se ganó rinde más por peso invertido |
+| Flujo de lead a cliente | Importante; prioricé un piloto semanal con cuentas, fechas y acciones verificables. Su retorno frente a adquisición aún debe medirse |
 | Operación de brand managers | Queda incluida: el radar ordena su semana |
 | **Interés compuesto a la vista** | Toca caja (renovación y expansión), usa datos que ya existen, y ordena a CEO, brand managers y administración alrededor de una pregunta |
 
 ## 4. Cuánto vale
 
-No tengo los números de Visible, así que no invento una cifra. El sistema trae una calculadora con campos vacíos: valor de la cuenta, meses que suele durar, costo de conseguir una nueva. Pedro pone sus números y ve cuánto vale anticipar una sola renovación.
+No tengo los números de Visible, así que no invento una cifra. El sistema trae una calculadora con campos vacíos: valor de la cuenta, meses que suele durar, costo de conseguir una nueva. Pedro pone sus números y explora un escenario potencial, no ROI ni una renovación salvada. Ingreso no es margen; sumar adquisición evitada solo tiene sentido si realmente se evita.
 
 ## 5. La solución, en una frase
 
@@ -74,7 +74,7 @@ Un radar que cada lunes cruza las fuentes disponibles, muestra qué cuentas est�
 ## 6. Principios de diseño
 
 1. **Lo desconocido nunca se pinta verde.** Si una fuente no leyó, la cuenta dice "sin lectura".
-2. **Funciona con lo mínimo y mejora con más.** Con Siigo y Pipedrive ya sirve; cada fuente adicional suma precisión.
+2. **Funciona con lo mínimo y mejora con más.** Siigo y Pipedrive permiten un piloto de facturación y fechas; para la lectura editorial hacen falta Notion y Magnettü. La demo actual exige esas fuentes críticas y no implementa aún ese modo reducido.
 3. **La IA hace el borrador, el humano pone el criterio.** Nada llega al cliente sin aprobación.
 4. **Vive donde ya trabajan.** Slack para el brief; lo demás, en la herramienta de siempre.
 5. **Sobrevive sin mí.** Umbrales en un solo archivo, manual para no técnicos, y una guía para conectar cada herramienta real.
@@ -85,3 +85,7 @@ Un radar que cada lunes cruza las fuentes disponibles, muestra qué cuentas est�
 - Si Circleback graba reuniones con clientes.
 - Qué exporta Magnettü por cliente.
 - Cómo se estructura la renovación en cada tipo de cuenta: individual, programa corporativo, cohorte.
+
+## Validación del piloto
+
+Acotaría el primer piloto a cuentas recurrentes con fecha de renovación. Compararía tiempo de preparación del brief, acciones con responsable y cumplimiento frente al proceso actual. La curva es ilustrativa, no universal ni predictiva; bootcamps y programas corporativos requieren otra calibración.

@@ -7,6 +7,8 @@ import { responder } from "../preguntar";
 import { estadoIA, proveedorActivo, redactar } from "../proveedor";
 import { cargaPorBM } from "../../motor/equipo";
 import { contarPalabras, fmtNum } from "../util";
+import { calcularMetricas } from "../../motor/metricas";
+import type { CuentaDetalle } from "../contexto";
 
 // Los nombres de las variables se arman por partes (no hay claves literales en el código).
 const VARS = [["ANTHROPIC", "API", "KEY"].join("_"), ["OPENAI", "API", "KEY"].join("_"), "IA_PROVEEDOR", "SLACK_WEBHOOK_URL"];
@@ -59,6 +61,22 @@ describe("proveedor sin clave", () => {
 });
 
 describe("modo plantilla", () => {
+  it("no genera evidencia cuando todas las publicaciones son futuras", () => {
+    const futura = {
+      cuenta_id: "c01",
+      fecha: "2026-10-06",
+      impresiones: 900,
+      pct_fuera_de_red: 0.5,
+      reacciones: 0,
+      comentarios: 0,
+      guardados: 0,
+      nuevos_seguidores: 0,
+      conversaciones_iniciadas: 1,
+    };
+    const d = { metricas: calcularMetricas([futura], 8, "2026-10-05", null) } as CuentaDetalle;
+    expect(evidenciaDe(d, "2026-10-05")).toBeNull();
+  });
+
   it("brief: menciona las 3 empresas rojas y el dinero en riesgo", async () => {
     const { panorama } = await cargarPanorama();
     const b = await briefLunes(panorama);
